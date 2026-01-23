@@ -3,174 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="שאלות נפוצות על בדיקות פוליגרף - משך זמן הבדיקה, כישורי הבודק, השפעת לחץ ועוד">
-    <meta name="keywords" content="שאלות נפוצות פוליגרף, FAQ פוליגרף, בדיקת פוליגרף שאלות">
-    <title>שאלות נפוצות | תבל - שרותי פוליגרף מתקדמים</title>
-    
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <title>שאלות נפוצות | תבל פוליגרף</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Assistant', sans-serif; scroll-behavior: smooth; }
+        .faq-answer { display: none; }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="תבל - שרותי פוליגרף מתקדמים">
-                <div class="logo-text">
-                    <span class="company-name">תבל - שרותי פוליגרף מתקדמים</span>
-                    <span class="phone">צרו איתנו קשר: 052-4006777</span>
-                </div>
-            </a>
-            
-            <ul class="nav-links">
-                <li><a href="index.html">דף הבית</a></li>
-                <li><a href="about.html">אודותינו</a></li>
-                <li><a href="polygraph-tests.html">בדיקות פוליגרף</a></li>
-                <li><a href="articles.html">מאמרים</a></li>
-                <li><a href="faq.html" class="active">שאלות נפוצות</a></li>
-                <li><a href="contact.html">צרו קשר</a></li>
-            </ul>
-            
-            <div class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
+<body class="bg-slate-50 text-slate-800">
+
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="images/logo.png" alt="Logo" class="h-12">
+                <span class="font-bold text-xl text-blue-900 hidden sm:block">תבל פוליגרף</span>
             </div>
-        </nav>
+            <div class="flex gap-6 font-semibold">
+                <a href="index.html" class="hover:text-blue-600 transition">דף הבית</a>
+                <a href="about.html" class="hover:text-blue-600 transition">אודות</a>
+                <a href="faq.html" class="text-blue-600 border-b-2 border-blue-600">שאלות נפוצות</a>
+                <a href="contact.html" class="bg-blue-900 text-white px-4 py-1 rounded hover:bg-blue-800 transition">צור קשר</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-blue-900 py-16 text-white text-center">
+        <h1 class="text-4xl font-bold mb-4">שאלות נפוצות</h1>
+        <p class="text-blue-100 max-w-2xl mx-auto px-4">כל מה שצריך לדעת על בדיקת פוליגרף, התהליך והאמינות המקצועית שלנו.</p>
     </header>
 
-    <section class="page-hero">
-        <h1>שאלות נפוצות</h1>
-    </section>
-
-    <section class="faq" style="padding-top: 60px;">
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question">
+    <main class="container mx-auto px-4 py-12 max-w-3xl">
+        <div class="space-y-4">
+            
+            <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-right font-bold hover:bg-gray-50 transition">
                     <span>מהו משך זמן הבדיקה?</span>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        משך זמן הבדיקה בכללותה הינו כ-60-90 דקות כאשר קודם לבדיקה באמצעות מכשיר הפוליגרף נערכת שיחה מקדימה ובה נערך רישום מלווה לבדיקה ובמהלכה נמסרים לנבדק השאלות שישאלו במבדק כך שאין הפתעות.
-                    </div>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>מה הם הכישורים של בודק הפוליגרף?</span>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        לצורך קבלת תוצאה מדויקת ככל הינתן במבדק, מעבר לקיומו של מכשיר ממוחשב המגובה ב-14 חיישנים עדכניים בטכנולוגיה המתקדמת בעולם והנמצא בשרות המכון, נדרש בודק בעל השכלה אקדמית ומקצועית בתחום החקירות והפוליגרף, עם רקע מקצועי מתאים, ידע נרחב במרכיבי התודעה הנפשית הפסיכולוגית והפיזיולוגית אותה רכש בהכשרה מתאימה, ללא דופי וניסיון חיים עשיר. השפעת תוצאת המבדק הינה כבדת משקל ובהכרח עשויה להשפיע על חיי הנבדק ברבדים שונים ומגוונים אשר על כן אישיותו, ניסיונו של הבודק והכשרתו הינה מהותית ואף קריטית.
-                    </div>
+                    <svg class="faq-icon w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="faq-answer p-5 pt-0 text-gray-600 border-t border-gray-100 bg-gray-50/50">
+                    משך הבדיקה נע בין 60 ל-90 דקות. זה כולל:
+                    <ul class="list-disc pr-5 mt-2 space-y-1">
+                        <li>שיחה מקדימה ורישום</li>
+                        <li>עבור על השאלות (אין הפתעות במבדק)</li>
+                        <li>המבדק עצמו במכשיר הפוליגרף</li>
+                    </ul>
                 </div>
             </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>האם יש השפעה על הבדיקה בעת התרגשות ו/או לחץ של הנבדק/ת?</span>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        מכשיר הפוליגרף המתקדם בעולם והמצוי במכון מנטר בין היתר את מרכיבי לחץ הדם, את המוליכות החשמלית בעור, את הדופק וכן את נפח וקצב הנשימה ועוד בעת הבדיקה. הפרמטרים האלו נבדקים ומנוטרים כאשר בסיס המבדק עורך את היחס בין משקלם היחסי בעת המבדק אף אם הוא חורג מבסיסם כאשר הנבדק במצב של לחץ או התרגשות ולרבות אף אם נטל תרופה כלשהיא.
-                    </div>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>מהו אופיין של השאלות בבדיקה?</span>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        השאלות הינן שאלות תכליתיות וחד משמעיות בהתאם לנושא הנדרש לבדיקה שהתשובה הנדרשת להן הן חד משמעיות כן! או לא! ללא פרשנות וללא הרחבה! עם סיום המבדק ינתח הבודק את התרשימים אותם ניטרו החיישנים במכשיר שהינו כאמור המתקדם בעולם, תוצאת המבדק תימסר למבקש הבדיקה ולו בלבד.
-                    </div>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>כמה זמן מראש צריך להודיע לנבדק על בדיקת פוליגרף?</span>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        נדרשת הכנה מנטאלית ונפשית עצמית של הנבדק מחד ומאידך ישנו תאום ותדרוך הכרחי קצר של הבודק עם הנבדק בד"כ טלפוני, ולכן רצוי ומקובל להודיע ולתאם עם הנבדק לפחות 24 שעות טרם הבדיקה.
-                    </div>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>מה נדרש לפני עריכת בדיקת פוליגרף?</span>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        טרם ההחלטה על קיום הבדיקה נדרש מבקש הבדיקה בין אם זה אדם פרטי ובין אם זה מוסד ממלכתי, מפעל, מעסיק או חברה להעמיד בפני הבודק את מלא הנתונים והרקע להם נדרשת הבדיקה. הנבדק/ת בהתאמה י/תציג את גרסתו/ה ובמהלך המפגש טרום הבדיקה י/תקבל את רשימת השאלות אחת לאחת ללא הפתעות, לא יהיו שאלות במבדק שהנבדק לא נדרש להם במפגש טרום הבדיקה.
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 40px; padding-bottom: 40px;">
-            <a href="contact.html" class="btn btn-primary">יש לכם שאלה? צרו קשר</a>
-        </div>
-    </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>תבל - שרותי פוליגרף מתקדמים</h4>
-                <p>מכון פוליגרף ממוחשב לאבחון ומידע, ייעוץ משפטי לפני ואחרי כל בדיקה.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h4>קישורים מהירים</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">דף הבית</a></li>
-                    <li><a href="about.html">אודותינו</a></li>
-                    <li><a href="polygraph-tests.html">בדיקות פוליגרף</a></li>
-                    <li><a href="faq.html">שאלות נפוצות</a></li>
-                    <li><a href="contact.html">צרו קשר</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>צרו קשר</h4>
-                <div class="footer-contact-info">
-                    <div class="footer-contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        <a href="tel:052-4006777" dir="ltr">052-4006777</a>
-                    </div>
-                    <div class="footer-contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        <a href="mailto:office@tevel-polygraph.co.il">office@tevel-polygraph.co.il</a>
-                    </div>
+            <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-right font-bold hover:bg-gray-50 transition">
+                    <span>האם לחץ והתרגשות משפיעים על התוצאה?</span>
+                    <svg class="faq-icon w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="faq-answer p-5 pt-0 text-gray-600 border-t border-gray-100 bg-gray-50/50">
+                    לא. המכשור המתקדם שלנו מנטר 14 פרמטרים שונים (דופק, מוליכות עור, נשימה ועוד). המערכת יודעת לשקלל את "רעשי הרקע" של הלחץ הטבעי ולבודד את התגובות הפיזיולוגיות הקשורות לאמירת אמת או שקר בלבד.
                 </div>
             </div>
+
+            </div>
+
+        <div class="mt-12 text-center bg-blue-50 p-8 rounded-2xl border border-blue-100">
+            <h3 class="text-xl font-bold mb-4">עדיין יש לכם שאלות?</h3>
+            <p class="mb-6 text-gray-600">אנחנו כאן כדי לתת לכם מענה מקצועי ודיסקרטי לכל שאלה.</p>
+            <a href="tel:0524006777" class="inline-block bg-blue-900 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-blue-800 transition">התקשרו עכשיו: 052-4006777</a>
         </div>
-        
-        <div class="footer-bottom">
-            <p>© 2026 תבל - שרותי פוליגרף מתקדמים. כל הזכויות שמורות.</p>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-10 mt-12 text-center">
+        <div class="container mx-auto px-4">
+            <p class="mb-2 italic text-white">תבל פוליגרף - מקצועיות, אמינות, דיסקרטיות.</p>
+            <p class="text-sm">© 2026 כל הזכויות שמורות. רמז 4, גדרה.</p>
         </div>
     </footer>
 
-    <div class="back-to-top">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
-    </div>
-
-    <a href="https://wa.me/9720524006777" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="שלח הודעה בוואטסאפ">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
-
-    <script src="js/main.js"></script>
+    <script>
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            item.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
