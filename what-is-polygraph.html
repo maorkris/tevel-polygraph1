@@ -3,135 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>תבל פוליגרף - דף הבית</title>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-blue: #00a8ff;
-            --deep-purple: #4b0082;
-            --glass-bg: rgba(255, 255, 255, 0.85);
-            --gradient: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 100%);
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Assistant', sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* רקע עם תנועה עדינה */
-        .hero-section {
-            background: var(--gradient);
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 40px 20px;
-            text-align: center;
-            color: white;
-            clip-path: ellipse(150% 100% at 50% 0%); /* יוצר קימור מודרני במקום בלוק ישר */
-        }
-
-        /* אנימציה ללוגו */
-        .logo-container {
-            animation: float 4s ease-in-out infinite;
-            margin-bottom: 20px;
-        }
-
-        .logo-container img {
-            max-width: 180px;
-            filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));
-        }
-
-        /* כרטיסיות שירותים */
-        .services-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: -50px auto 50px;
-            padding: 0 20px;
-        }
-
-        .service-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s forwards;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-            display: block;
-            color: var(--primary-blue);
-        }
-
-        h1 { font-weight: 700; font-size: 2.5rem; margin-bottom: 10px; }
-        p.subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; }
-
-        /* אנימציות */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* השהיית אנימציה לכרטיסים */
-        .service-card:nth-child(1) { animation-delay: 0.2s; }
-        .service-card:nth-child(2) { animation-delay: 0.4s; }
-        .service-card:nth-child(3) { animation-delay: 0.6s; }
-
-    </style>
+    <meta name="description" content="מהו פוליגרף? מידע מקיף על מכשיר הפוליגרף, אופן פעולתו והטכנולוגיה שעומדת מאחורי בדיקת גילוי השקר">
+    <meta name="keywords" content="מהו פוליגרף, גלאי שקרים, איך עובד פוליגרף, בדיקת פוליגרף">
+    <title>מהו פוליגרף? | תבל - שרותי פוליגרף מתקדמים</title>
+    
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="תבל - שרותי פוליגרף מתקדמים">
+                <div class="logo-text">
+                    <span class="company-name">תבל - שרותי פוליגרף מתקדמים</span>
+                    <span class="phone">צרו איתנו קשר: 052-4006777</span>
+                </div>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">דף הבית</a></li>
+                <li><a href="index.html#services">השירותים שלנו</a></li>
+                <li><a href="what-is-polygraph.html" class="active">מהו פוליגרף?</a></li>
+                <li><a href="articles.html">מאמרים</a></li>
+                <li><a href="index.html#faq">שאלות נפוצות</a></li>
+                <li><a href="index.html#contact">צרו קשר</a></li>
+            </ul>
+            
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-    <section class="hero-section">
-        <div class="logo-container">
-            <img src="logo.png" alt="תבל פוליגרף">
+    <!-- Page Hero -->
+    <section class="page-hero" style="background: linear-gradient(135deg, #1a2a6c, #2a4858); padding: 100px 20px; text-align: center; color: white;">
+    <h1 style="font-size: 3.5rem; margin-bottom: 25px; font-weight: 800;">מהו פוליגרף?</h1>
+    <p style="font-size: 1.4rem; max-width: 900px; margin: 0 auto; line-height: 1.6; font-weight: 300;">
+        הפוליגרף (בלשון העם <strong>"מכונת אמת"</strong>) הוא מכשיר מתקדם שנועד לקלוט את תגובותיו הבלתי רצוניות של אדם כדי לאבחן אמת או שקר בדיוק מרבי.
+    </p>
+</section>
+
+<article class="page-content" style="max-width: 1100px; margin: 0 auto; padding: 60px 20px; line-height: 1.9; color: #333; direction: rtl; font-family: sans-serif;">
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 60px; align-items: center;">
+        <div style="flex: 1; min-width: 300px;">
+            <p style="font-size: 1.15rem;">
+                הפוליגרף משמש במגוון רב של מבדקים, החל מ<strong>תחום התעסוקה ותחום האבטחה</strong> ועד לנושאים אישיים שבינו לבינה. 
+                מקור השם מגיע מהשפה היוונית ומשמעו <strong>רב רישום</strong> (פולי = רב, גרף = רישום).
+            </p>
+            <p style="font-size: 1.15rem;">
+                המכשיר הומצא בשנות ה-20 של המאה ה-20 בארצות הברית ומבוסס על ההנחה המדעית שכאשר אדם משקר, מתרחשים בגופו שינויים פיזיולוגיים בלתי נשלטים עקב המתח הנפשי.
+            </p>
         </div>
-        <h1>תבל שירותי פוליגרף</h1>
-        <p class="subtitle">מקצועיות, אמינות וטכנולוגיה מתקדמת לשירותכם</p>
-    </section>
-
-    <div class="services-container">
-        <div class="service-card">
-            <span class="icon">🔍</span>
-            <h3>בדיקות מהימנות</h3>
-            <p>בדיקות תקופתיות וסינון מועמדים לעבודה ברמה הגבוהה ביותר.</p>
-        </div>
-
-        <div class="service-card">
-            <span class="icon">⚖️</span>
-            <h3>ייעוץ משפטי</h3>
-            <p>מתן חוות דעת מומחה לבית המשפט וליווי בהליכים משפטיים.</p>
-        </div>
-
-        <div class="service-card">
-            <span class="icon">🤝</span>
-            <h3>בירור אישי</h3>
-            <p>פתרונות דיסקרטיים לבירור סוגיות אישיות ומשפחתיות ברגישות מירבית.</p>
+        <div style="flex: 1; min-width: 300px; background: #f4f7f9; padding: 30px; border-radius: 15px; border-right: 6px solid #1a2a6c;">
+            <h2 style="color: #1a2a6c; margin-top: 0; font-size: 1.8rem;">מאפייני המכשיר</h2>
+            <p>
+                רמת הדיוק והאבחנה הגבוהה, בשילוב מיומנות המתשאל והמפענח, מהווים <strong>מרכיבים קריטיים</strong> להשלכה הישירה על תוצאות הבדיקה. 
+                מכלול צירופים אלו מבטיח קבלת תוצאות מבדק <strong>אמין ומהימן</strong>.
+            </p>
         </div>
     </div>
 
-</body>
-</html>
+    <section style="background: #ffffff; border: 1px solid #e1e8ed; padding: 40px; border-radius: 20px; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+        <h2 style="color: #1a2a6c; font-size: 2.2rem; text-align: center; margin-bottom: 30px;">כיצד עובד ופועל הפוליגרף?</h2>
+        <p style="text-align: center; max-width: 850px; margin: 0 auto 30px auto; font-size: 1.1rem;">
+            בדיקת פוליגרף נסמכת על ההנחה הרווחת כי אמירת שקר גורמת לשינויים פיזיולוגיים הנובעים מהחשש לגילוי. המכשיר בוחן פרמטרים כגון <strong>דופק, לחץ דם, זיעה ונשימה</strong> באופן רציף לאורך כל המבדק.
+        </p>
+        <div style="background: #1a2a6c; color: white; padding: 20px; border-radius: 10px; text-align: center; font-size: 1.1rem;">
+            בסיום הבדיקה, עורך הבודק ניתוח מעמיק של הצ'ארטים (התרשימים) ומזהה תגובות חריגות המשקפות את <strong>תמונת המימד החיונית לגילוי האמת</strong>.
+        </div>
+    </section>
+
+    <h2 style="color: #1a2a6c; text-align: center; margin-bottom: 40px; font-size: 2.2rem;">מערכת חיישנים ייחודית ומתקדמת</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-bottom: 40px;">
+        
+        <div style="background: #fdfdfd; border: 1px solid #eee; padding: 25px; border-radius: 15px; transition: transform 0.3s ease;">
+            <h3 style="color: #2a4858; border-bottom: 2px solid #2a4858; padding-bottom: 10px; font-size: 1.3rem;">נשימה עליונה ותחתונה</h3>
+            <p style="font-size: 0.95rem;">חיישנים העוטפים את בית החזה והבטן התחתונה. מאבחנים שינויים בקצב, בנפח וביחס בין שאיפה לנשיפה.</p>
+        </div>
+
+        <div style="background: #fdfdfd; border: 1px solid #eee; padding: 25px; border-radius: 15px;">
+            <h3 style="color: #2a4858; border-bottom: 2px solid #2a4858; padding-bottom: 10px; font-size: 1.3rem;">לחץ דם ודופק</h3>
+            <p style="font-size: 0.95rem;">ניטור שינויים בלחץ הדם, כמות הדם הזורמת, קצב פעימות הלב והיחס בין לחץ סיסטולי לדיאסטולי.</p>
+        </div>
+
+        <div style="background: #fdfdfd; border: 1px solid #eee; padding: 25px; border-radius: 15px;">
+            <h3 style="color: #2a4858; border-bottom: 2px solid #2a4858; padding-bottom: 10px; font-size: 1.3rem;">מוליכות העור</h3>
+            <p style="font-size: 0.95rem;">ניטור ההרכב הכימי של הפרשות הזיעה בבלוטות התת-עוריות לאבחון שינויים במוליכות החשמלית.</p>
+        </div>
+
+        <div style="background: #fdfdfd; border: 1px solid #eee; padding: 25px; border-radius: 15px;">
+            <h3 style="color: #2a4858; border-bottom: 2px solid #2a4858; padding-bottom: 10px; font-size: 1.3rem;">מניעת שיבוש</h3>
+            <p style="font-size: 0.95rem;">מערכת חיישנים ייעודית שנועדה לזהות ניסיונות של הנבדק להשפיע באופן מלאכותי על תוצאות המבדק.</p>
+        </div>
+    </div>
+
+    <p style="text-align: center; font-style: italic; color: #666; font-size: 1rem;">
+        * המכשיר נמצא בשימוש נרחב בארגוני ביון ושיטור מהמובילים בתחומם ברחבי העולם.
+    </p>
+
+</article>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>תבל - שרותי פוליגרף מתקדמים</h4>
+                <p>מכון פוליגרף ממוחשב לאבחון ומידע, ייעוץ משפטי לפני ואחרי כל בדיקה. מתמחים בכל סוגי בדיקות הפוליגרף עם ציוד מתקדם ובודקים מוסמכים.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>קישורים מהירים</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="what-is-polygraph.html">מהו פוליגרף?</a></li>
+                    <li><a href="articles.html">מאמרים</a></li>
+                    <li><a href="faq.html">שאלות נפוצות</a></li>
+                    <li><a href="index.html#contact">צרו
