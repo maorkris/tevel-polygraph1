@@ -179,7 +179,7 @@ nav {
     min-height: 100vh;
     /* מחליפים את הצבע רקע בתמונה + שכבת כהות */
     background: linear-gradient(rgba(0, 15, 40, 0.8), rgba(0, 15, 40, 0.8)), 
-                url('images/main-bg.jpg'); /* וודא שהנתיב לתמונה נכון */
+                url('images/polygraph-device.png'); /* וודא שהנתיב לתמונה נכון */
     background-size: cover;
     background-position: center;
     position: relative;
