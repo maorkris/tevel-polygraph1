@@ -607,41 +607,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 
 <!-- Cookie Banner HTML -->
-<div id="cookie-banner">
-  ...
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const banner = document.getElementById('cookie-banner');
-    const acceptBtn = document.getElementById('acceptCookies');
-
-    // בדיקה אם המשתמש כבר אישר בעבר
-    if (localStorage.getItem('cookie-confirmed') === 'true') {
-        if (banner) banner.style.display = 'none';
-    } else {
-        if (banner) banner.style.display = 'block';
-    }
-
-    if (acceptBtn && banner) {
-        acceptBtn.addEventListener('click', function() {
-            // 1. נטרול מיידי של לחיצות על הבאנר כדי שלא יחסום את מה שמתחתיו
-            banner.style.pointerEvents = 'none';
-            
-            // 2. אנימציה של היעלמות
-            banner.style.opacity = '0';
-            banner.style.transform = 'translateX(-50%) translateY(20px)';
-            banner.style.transition = 'all 0.4s ease'; // מוודא שיש אנימציה חלקה
-            
-            // 3. הסרה מוחלטת מהדף לאחר האנימציה
-            setTimeout(() => {
-                banner.style.display = 'none';
-                localStorage.setItem('cookie-confirmed', 'true');
-            }, 400); 
-        });
-    }
-});
-</script>
 
 </body>
 </html>
