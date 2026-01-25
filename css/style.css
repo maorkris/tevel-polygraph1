@@ -1244,9 +1244,9 @@ footer {
 }
 
 #cookie-banner .cookie-inner {
-  background: rgba(12, 15, 18, 0.88);
+  background: rgba(10, 11, 20, 0.85); /* כהה יותר שמתאים לכחול */
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 18px;
   padding: 20px 24px;
   display: flex !important;
@@ -1259,20 +1259,22 @@ footer {
 #cookie-banner .cookie-text {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   color: #e5e7eb;
 }
 
 #cookie-banner .cookie-text strong {
-  font-size: 14px;
-  font-weight: 600;
-  color: #c9a24b;
+  font-size: 15px;
+  font-weight: 700;
+  /* טקסט בצבע כחול-ציאן זוהר */
+  color: #00d4ff; 
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
 }
 
 #cookie-banner .cookie-text span {
   font-size: 13px;
   line-height: 1.6;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 #cookie-banner .cookie-actions {
@@ -1282,22 +1284,34 @@ footer {
 }
 
 #cookie-banner .cookie-actions button {
-  background: linear-gradient(135deg, #c9a24b, #9c7d3a);
-  color: #0a0a0a;
+  /* גרדיאנט כחול-סגול עמוק */
+  background: linear-gradient(135deg, #6366f1, #a855f7); 
+  color: #ffffff;
   border: none;
-  border-radius: 10px;
-  padding: 8px 20px;
+  border-radius: 12px;
+  padding: 10px 24px;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
+  /* אפקט זוהר סביב הכפתור */
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+}
+
+#cookie-banner .cookie-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+  filter: brightness(1.1);
 }
 
 #cookie-banner .cookie-actions a {
-  color: #ffffff;
+  color: #9ca3af;
   font-size: 13px;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 #cookie-banner .cookie-actions a:hover {
-  color: #c9a24b;
+  color: #ffffff;
+  text-decoration: underline;
 }
