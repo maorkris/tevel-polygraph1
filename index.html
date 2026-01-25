@@ -513,19 +513,7 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
-    <script>
-  const cookieBanner = document.getElementById("cookie-banner");
-  const acceptBtn = document.getElementById("acceptCookies");
-
-  if (!localStorage.getItem("cookiesAccepted")) {
-    cookieBanner.style.display = "block";
-  }
-
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "true");
-    cookieBanner.style.display = "none";
-  });
-</script>
+    
 
     <script>
 document.addEventListener('DOMContentLoaded', function() {
