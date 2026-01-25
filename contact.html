@@ -187,53 +187,55 @@
             </div>
             
             <!-- FormSubmit Form - החלף YOUR_EMAIL עם המייל שלך -->
-            <form id="contact-form" class="contact-form" action="https://formsubmit.co/maorkris@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="פנייה חדשה מאתר תבל פוליגרף">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_next" value="thank-you.html">
-                <input type="text" name="_honey" style="display:none">
-                
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="שם*" required>
-                </div>
-                
-                <div class="form-group">
-                    <input type="text" name="company" placeholder="שם החברה">
-                </div>
-                
-                <div class="form-group">
-                    <input type="tel" name="phone" placeholder="טלפון*" required dir="ltr">
-                </div>
-                
-                <div class="form-group">
-                    <input type="email" name="email" placeholder='דוא"ל*' required dir="ltr">
-                </div>
-                
-                <div class="form-group">
-                    <select name="subject" required>
-                        <option value="" disabled selected>נושא הפניה*</option>
-                        <option value="בדיקת פוליגרף פרטית">בדיקת פוליגרף פרטית</option>
-                        <option value="בדיקת פוליגרף עסקית">בדיקת פוליגרף עסקית</option>
-                        <option value="חוות דעת לבית משפט">חוות דעת לבית משפט</option>
-                        <option value="מבחני אמינות לעובדים">מבחני אמינות לעובדים</option>
-                        <option value="ייעוץ משפטי">ייעוץ משפטי</option>
-                        <option value="קורס בודקי פוליגרף">קורס בודקי פוליגרף</option>
-                        <option value="אחר">אחר</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <textarea name="message" placeholder="הודעה (אופציונלי)" rows="4"></textarea>
-                </div>
-                
-                <div class="checkbox-group">
-                    <input type="checkbox" id="newsletter" name="newsletter" value="yes">
-                    <label for="newsletter">אני מאשר/ת קבלת עדכונים ופרסומים</label>
-                </div>
-                
-                <button type="submit" class="submit-btn">שלח</button>
-            </form>
+  <form id="contact-form" class="contact-form" action="https://formsubmit.co/maorkris@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="פנייה חדשה מאתר תבל פוליגרף">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    
+    <input type="hidden" name="_next" value="https://maorkris.github.io/newPoli/thank-you.html">
+    
+    <input type="text" name="_honey" style="display:none">
+
+    <div class="form-group">
+        <input type="text" name="name" placeholder="שם*" required>
+    </div>
+    
+    <div class="form-group">
+        <input type="text" name="company" placeholder="שם החברה">
+    </div>
+    
+    <div class="form-group">
+        <input type="tel" name="phone" placeholder="טלפון*" required dir="ltr">
+    </div>
+    
+    <div class="form-group">
+        <input type="email" name="email" placeholder='דוא"ל*' required dir="ltr">
+    </div>
+    
+    <div class="form-group">
+        <select name="subject" required>
+            <option value="" disabled selected>נושא הפניה*</option>
+            <option value="בדיקת פוליגרף פרטית">בדיקת פוליגרף פרטית</option>
+            <option value="בדיקת פוליגרף עסקית">בדיקת פוליגרף עסקית</option>
+            <option value="חוות דעת לבית משפט">חוות דעת לבית משפט</option>
+            <option value="מבחני אמינות לעובדים">מבחני אמינות לעובדים</option>
+            <option value="ייעוץ משפטי">ייעוץ משפטי</option>
+            <option value="קורס בודקי פוליגרף">קורס בודקי פוליגרף</option>
+            <option value="אחר">אחר</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <textarea name="message" placeholder="הודעה (אופציונלי)" rows="4"></textarea>
+    </div>
+    
+    <div class="checkbox-group">
+        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+        <label for="newsletter">אני מאשר/ת קבלת עדכונים ופרסומים</label>
+    </div>
+    
+    <button type="submit" class="submit-btn">שלח</button>
+</form>
         </div>
     </section>
 
