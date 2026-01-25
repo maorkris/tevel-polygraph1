@@ -177,11 +177,7 @@ nav {
 ============================================ */
 .hero {
     min-height: 100vh;
-    /* מחליפים את הצבע רקע בתמונה + שכבת כהות */
-    background: linear-gradient(rgba(0, 15, 40, 0.8), rgba(0, 15, 40, 0.8)), 
-                url('images/polygraph-device.png'); /* וודא שהנתיב לתמונה נכון */
-    background-size: cover;
-    background-position: center;
+    background: var(--gradient-hero);
     position: relative;
     display: flex;
     align-items: center;
@@ -220,18 +216,36 @@ nav {
     z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
-    display: block; /* שינינו מ-grid ל-block */
-    text-align: center; /* אופציונלי: ממרכז את הטקסט לאמצע */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
 }
 
 .hero-text {
     color: var(--white);
-    max-width: 800px; /* מגביל את רוחב הטקסט שלא יימתח מדי */
-    margin: 0 auto; /* ממרכז את גוש הטקסט */
+}
+
+.hero-text h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 25px;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-text .subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    opacity: 0.9;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
 .hero-btns {
-    justify-content: center; /* ממרכז את הכפתורים אם הטקסט במרכז */
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
 }
 
 .btn {
@@ -271,9 +285,15 @@ nav {
 }
 
 .hero-image {
-    display: none;
+    position: relative;
+    animation: fadeInRight 1s ease-out 0.3s backwards;
 }
 
+.hero-image img {
+    width: 100%;
+    max-width: 550px;
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.4));
+}
 /* Floating elements */
 .floating-element {
     position: absolute;
