@@ -610,6 +610,28 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
     </div>
+<!-- Cookie Banner HTML -->
+<div id="cookie-banner">
+  ...
+</div>
+
+<!-- Cookie Banner JS -->
+<script>
+  const cookieBanner = document.getElementById("cookie-banner");
+  const acceptBtn = document.getElementById("acceptCookies");
+
+  if (!localStorage.getItem("cookiesAccepted")) {
+    cookieBanner.style.display = "block";
+  }
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "true");
+    cookieBanner.style.display = "none";
+  });
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
