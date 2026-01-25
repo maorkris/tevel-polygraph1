@@ -1232,95 +1232,105 @@ footer {
     height: 32px;
     fill: white;
 }
+/* קונטיינר הבאנר הראשי */
 #cookie-banner {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 48px);
-  max-width: 1080px;
-  z-index: 99999;
-  display: block !important;
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    max-width: 1080px;
+    z-index: 9999; /* גבוה מאוד, אבל מתחת לוואטסאפ */
+    display: none; /* הסקריפט יציג את זה אם צריך */
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
+/* השכבה הפנימית המעוצבת */
 #cookie-banner .cookie-inner {
-  background: rgba(10, 11, 20, 0.85); /* כהה יותר שמתאים לכחול */
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
-  padding: 20px 24px;
-  display: flex !important;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
+    background: rgba(10, 11, 20, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px); /* תמיכה באייפון */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 20px 24px;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
 }
 
+/* פתרון קריטי למובייל - כשהבאנר נעלם הוא לא חוסם לחיצות */
+#cookie-banner.hidden {
+    opacity: 0 !important;
+    transform: translateX(-50%) translateY(40px) !important;
+    pointer-events: none !important;
+}
+
+/* טקסט וכותרות */
 #cookie-banner .cookie-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #e5e7eb;
+    text-align: right;
 }
 
 #cookie-banner .cookie-text strong {
-  font-size: 15px;
-  font-weight: 700;
-  /* טקסט בצבע כחול-ציאן זוהר */
-  color: #00d4ff; 
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    font-size: 15px;
+    font-weight: 700;
+    color: #00d4ff; 
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
 }
 
 #cookie-banner .cookie-text span {
-  font-size: 13px;
-  line-height: 1.6;
-  opacity: 0.85;
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.85;
 }
 
+/* כפתורים ופעולות */
 #cookie-banner .cookie-actions {
-  display: flex !important;
-  align-items: center;
-  gap: 16px;
+    display: flex !important;
+    align-items: center;
+    gap: 16px;
 }
 
 #cookie-banner .cookie-actions button {
-  /* גרדיאנט כחול-סגול עמוק */
-  background: linear-gradient(135deg, #6366f1, #a855f7); 
-  color: #ffffff;
-  border: none;
-  border-radius: 12px;
-  padding: 10px 24px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  /* אפקט זוהר סביב הכפתור */
-  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
-}
-
-#cookie-banner .cookie-actions button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
-  filter: brightness(1.1);
+    background: linear-gradient(135deg, #6366f1, #a855f7); 
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+    white-space: nowrap;
 }
 
 #cookie-banner .cookie-actions a {
-  color: #9ca3af;
-  font-size: 13px;
-  text-decoration: none;
-  transition: color 0.2s;
+    color: #9ca3af;
+    font-size: 13px;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
-#cookie-banner .cookie-actions a:hover {
-  color: #ffffff;
-  text-decoration: underline;
+/* התאמה למובייל - שבירת שורות אם המסך קטן מדי */
+@media (max-width: 768px) {
+    #cookie-banner .cookie-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    #cookie-banner {
+        bottom: 10px;
+        width: calc(100% - 20px);
+    }
 }
-#cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #0A0B14D9; /* הצבע שמופיע אצלך בצילום */
-    z-index: 999;
-    display: block;
+
+/* הבטחת כפתור הוואטסאפ מעל הבאנר */
+.whatsapp-btn {
+    z-index: 10000 !important;
 }
