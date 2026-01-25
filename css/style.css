@@ -198,11 +198,12 @@ nav {
   margin: 0 auto;
   padding: 80px 40px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
   z-index: 2;
 }
 
+/* TEXT */
 .hero-text h1 {
   font-size: 56px;
   line-height: 1.2;
@@ -222,6 +223,7 @@ nav {
   gap: 20px;
 }
 
+/* BUTTONS */
 .btn-primary {
   padding: 14px 28px;
   background: linear-gradient(135deg, #22d3ee, #2563eb);
@@ -252,28 +254,43 @@ nav {
   background: rgba(255,255,255,0.08);
 }
 
+/* VISUAL */
 .hero-visual {
   position: relative;
-  background: rgba(255,255,255,0.05);
-  border-radius: 24px;
-  backdrop-filter: blur(18px);
-  padding: 30px;
-  box-shadow: 0 40px 120px rgba(0,0,0,0.5);
-}
-
-.hero-visual img {
   width: 100%;
-  border-radius: 16px;
+  height: 420px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 50px 140px rgba(0,0,0,0.65);
 }
 
-.glow-lines {
+/* IMAGE LAYER */
+.hero-visual-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(34,211,238,0.15), transparent 60%);
+  background-image: url("images/polygraph-device.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
+}
+
+/* GLASS + GLOW */
+.hero-visual-glass {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  backdrop-filter: blur(12px) saturate(120%);
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.10),
+    rgba(255,255,255,0.02)
+  );
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.08),
+    inset 0 0 60px rgba(34,211,238,0.12);
   pointer-events: none;
 }
 
-}
 /* Floating elements */
 .floating-element {
     position: absolute;
