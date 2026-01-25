@@ -1235,194 +1235,87 @@ footer {
 /* קונטיינר הבאנר הראשי */
 #cookie-banner {
     position: fixed;
-    bottom: 24px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: calc(100% - 48px);
-    max-width: 1080px;
-    z-index: 9999; /* גבוה מאוד, אבל מתחת לוואטסאפ */
-    display: none; /* הסקריפט יציג את זה אם צריך */
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    width: 90%;
+    max-width: 1000px;
+    z-index: 9998; /* מתחת לוואטסאפ */
+    display: none; /* נשלט ע"י ה-JS */
 }
 
-/* השכבה הפנימית המעוצבת */
 #cookie-banner .cookie-inner {
-    background: rgba(10, 11, 20, 0.85);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px); /* תמיכה באייפון */
+    background: rgba(10, 11, 20, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 18px;
-    padding: 20px 24px;
-    display: flex !important;
+    border-radius: 15px;
+    padding: 15px 25px;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* פתרון קריטי למובייל - כשהבאנר נעלם הוא לא חוסם לחיצות */
-#cookie-banner.hidden {
-    opacity: 0 !important;
-    transform: translateX(-50%) translateY(40px) !important;
-    pointer-events: none !important;
-}
-
-/* טקסט וכותרות */
 #cookie-banner .cookie-text {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    color: #e5e7eb;
+    color: #ffffff;
     text-align: right;
 }
 
 #cookie-banner .cookie-text strong {
-    font-size: 15px;
-    font-weight: 700;
-    color: #00d4ff; 
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    display: block;
+    color: #00d4ff;
+    font-size: 16px;
+    margin-bottom: 4px;
 }
 
 #cookie-banner .cookie-text span {
-    font-size: 13px;
-    line-height: 1.6;
-    opacity: 0.85;
+    font-size: 14px;
+    opacity: 0.9;
 }
 
-/* כפתורים ופעולות */
 #cookie-banner .cookie-actions {
-    display: flex !important;
+    display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 15px;
 }
 
 #cookie-banner .cookie-actions button {
-    background: linear-gradient(135deg, #6366f1, #a855f7); 
-    color: #ffffff;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: white;
     border: none;
-    border-radius: 12px;
-    padding: 10px 24px;
-    font-size: 13px;
-    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+    font-weight: 600;
     white-space: nowrap;
 }
 
 #cookie-banner .cookie-actions a {
     color: #9ca3af;
-    font-size: 13px;
     text-decoration: none;
+    font-size: 13px;
     white-space: nowrap;
 }
 
-/* התאמה למובייל - שבירת שורות אם המסך קטן מדי */
+/* התאמה קריטית למובייל - שלא ייחתך */
 @media (max-width: 768px) {
     #cookie-banner .cookie-inner {
         flex-direction: column;
         text-align: center;
-        gap: 15px;
+        padding: 20px;
     }
-    #cookie-banner {
-        bottom: 10px;
-        width: calc(100% - 20px);
+    #cookie-banner .cookie-text {
+        text-align: center;
+    }
+    #cookie-banner .cookie-actions {
+        width: 100%;
+        justify-content: center;
     }
 }
 
-/* הבטחת כפתור הוואטסאפ מעל הבאנר */
+/* התיקון לכפתור הוואטסאפ */
 .whatsapp-btn {
-    z-index: 10000 !important;
-}
-#cookie-banner {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 48px);
-  max-width: 1080px;
-  z-index: 99999;
-  display: block !important;
-}
-
-#cookie-banner .cookie-inner {
-  background: rgba(10, 11, 20, 0.85); /* כהה יותר שמתאים לכחול */
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
-  padding: 20px 24px;
-  display: flex !important;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
-}
-
-#cookie-banner .cookie-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  color: #e5e7eb;
-}
-
-#cookie-banner .cookie-text strong {
-  font-size: 15px;
-  font-weight: 700;
-  /* טקסט בצבע כחול-ציאן זוהר */
-  color: #00d4ff; 
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
-}
-
-#cookie-banner .cookie-text span {
-  font-size: 13px;
-  line-height: 1.6;
-  opacity: 0.85;
-}
-
-#cookie-banner .cookie-actions {
-  display: flex !important;
-  align-items: center;
-  gap: 16px;
-}
-
-#cookie-banner .cookie-actions button {
-  /* גרדיאנט כחול-סגול עמוק */
-  background: linear-gradient(135deg, #6366f1, #a855f7); 
-  color: #ffffff;
-  border: none;
-  border-radius: 12px;
-  padding: 10px 24px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  /* אפקט זוהר סביב הכפתור */
-  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
-}
-
-#cookie-banner .cookie-actions button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
-  filter: brightness(1.1);
-}
-
-#cookie-banner .cookie-actions a {
-  color: #9ca3af;
-  font-size: 13px;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-#cookie-banner .cookie-actions a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-#cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #0A0B14D9; /* הצבע שמופיע אצלך בצילום */
-    z-index: 999;
-    display: block;
+    z-index: 9999 !important;
 }
