@@ -687,6 +687,34 @@ document.addEventListener('DOMContentLoaded', function() {
     cookieBanner.style.display = "none";
   });
 </script>
+	<script>
+  // מחכה שהדף יסיים להיטען
+  document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('acceptCookies');
+
+    // 1. בודק אם המשתמש כבר לחץ פעם (שלא יציק לו כל פעם מחדש)
+    if (localStorage.getItem('cookie-confirmed') === 'true') {
+      banner.style.display = 'none';
+    }
+
+    // 2. מה קורה כשלוחצים על הכפתור
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function() {
+        // הופך את הבאנר לשקוף (אנימציה)
+        banner.style.opacity = '0';
+        banner.style.transform = 'translateX(-50%) translateY(20px)';
+        
+        // מחכה שהאנימציה תסתיים ואז מעלים אותו לגמרי מהדף
+        setTimeout(() => {
+          banner.style.display = 'none';
+          // שומר בזיכרון של הדפדפן שהמשתמש אישר
+          localStorage.setItem('cookie-confirmed', 'true');
+        }, 400); 
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
