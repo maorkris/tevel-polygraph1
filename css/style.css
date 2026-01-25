@@ -1219,7 +1219,7 @@ footer {
     align-items: center;
     justify-content: center;
     box-shadow: 0 5px 25px rgba(37,211,102,0.4);
-    z-index: 999;
+    z-index: 9999;
     transition: var(--transition);
 }
 
