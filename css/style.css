@@ -1334,3 +1334,95 @@ footer {
 .whatsapp-btn {
     z-index: 10000 !important;
 }
+#cookie-banner {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1080px;
+  z-index: 99999;
+  display: block !important;
+}
+
+#cookie-banner .cookie-inner {
+  background: rgba(10, 11, 20, 0.85); /* כהה יותר שמתאים לכחול */
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 20px 24px;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
+}
+
+#cookie-banner .cookie-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #e5e7eb;
+}
+
+#cookie-banner .cookie-text strong {
+  font-size: 15px;
+  font-weight: 700;
+  /* טקסט בצבע כחול-ציאן זוהר */
+  color: #00d4ff; 
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+#cookie-banner .cookie-text span {
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+#cookie-banner .cookie-actions {
+  display: flex !important;
+  align-items: center;
+  gap: 16px;
+}
+
+#cookie-banner .cookie-actions button {
+  /* גרדיאנט כחול-סגול עמוק */
+  background: linear-gradient(135deg, #6366f1, #a855f7); 
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* אפקט זוהר סביב הכפתור */
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+}
+
+#cookie-banner .cookie-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+  filter: brightness(1.1);
+}
+
+#cookie-banner .cookie-actions a {
+  color: #9ca3af;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+#cookie-banner .cookie-actions a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #0A0B14D9; /* הצבע שמופיע אצלך בצילום */
+    z-index: 999;
+    display: block;
+}
