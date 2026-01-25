@@ -261,7 +261,8 @@ nav {
   height: 420px;
   border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 50px 140px rgba(0,0,0,0.65);
+  box-shadow: 0 60px 160px rgba(0,0,0,0.7);
+  background: #000;
 }
 
 /* IMAGE LAYER */
@@ -271,25 +272,36 @@ nav {
   background-image: url("images/polygraph-device.jpg");
   background-size: cover;
   background-position: center;
-  transform: scale(1.03);
+  filter: contrast(1.05) saturate(1.1);
+  transform: scale(1.02);
 }
 
-/* GLASS + GLOW */
+/* SOFT DARK OVERLAY - נותן עומק */
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.05)
+  );
+  pointer-events: none;
+}
+
+/* GLASS LAYER - עדין מאוד */
 .hero-visual-glass {
   position: absolute;
   inset: 0;
   border-radius: 28px;
-  backdrop-filter: blur(12px) saturate(120%);
-  background: linear-gradient(
-    135deg,
-    rgba(255,255,255,0.10),
-    rgba(255,255,255,0.02)
-  );
+  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.03);
   box-shadow:
     inset 0 0 0 1px rgba(255,255,255,0.08),
-    inset 0 0 60px rgba(34,211,238,0.12);
+    inset 0 0 40px rgba(34,211,238,0.10);
   pointer-events: none;
 }
+
 
 /* Floating elements */
 .floating-element {
