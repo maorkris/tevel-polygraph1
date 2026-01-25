@@ -271,14 +271,7 @@ nav {
 }
 
 .hero-image {
-    position: relative;
-    animation: fadeInRight 1s ease-out 0.3s backwards;
-}
-
-.hero-image img {
-    width: 100%;
-    max-width: 550px;
-    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.4));
+    display: none;
 }
 
 /* Floating elements */
