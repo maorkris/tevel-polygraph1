@@ -132,11 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Page load animation
-    setTimeout(() => {
-        document.body.classList.add('page-loaded');
-    }, 20);
-    
     // Handle link clicks
     const links = document.querySelectorAll('a[href^="/"]:not([target="_blank"]), a[href$=".html"]:not([target="_blank"])');
     
