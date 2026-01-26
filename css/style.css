@@ -1488,3 +1488,67 @@ section.hero.hero-internal {
     min-height: 300px; /* במקום הגובה המקורי */
     height: 50vh; /* או גובה אחר לפי העדפה */
 }
+/* הוסף את זה לקובץ ה-CSS שלך */
+
+/* סקשן על יוסי קריספל עם תמונה */
+.founder-section {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    align-items: start;
+    margin: 50px 0;
+    padding: 40px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.founder-image {
+    position: sticky;
+    top: 100px;
+}
+
+.founder-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    display: block;
+}
+
+.founder-content h2 {
+    margin-top: 0;
+    color: #1a1a1a;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.founder-content p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.founder-content strong {
+    color: #00a8cc;
+    font-weight: 600;
+}
+
+/* Responsive למובייל */
+@media (max-width: 768px) {
+    .founder-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .founder-image {
+        position: static;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .founder-content h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
