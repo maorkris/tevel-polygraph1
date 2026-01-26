@@ -1488,19 +1488,33 @@ footer {
 ============================================ */
 
 body {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-body.page-loaded {
-    opacity: 1;
-    transform: translateY(0);
+    animation: fadeInPage 0.3s ease-in;
 }
 
 body.page-transitioning {
-    opacity: 0;
-    transform: translateY(-20px);
+    animation: fadeOutPage 0.3s ease-out forwards;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutPage {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
 }
 
 /* Smooth scroll behavior */
