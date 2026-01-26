@@ -70,6 +70,240 @@
     </div>
   </div>
 </section>
+    <!-- Founder Introduction Section -->
+    <!-- הוסף את הקוד הזה מיד אחרי סגירת ה-hero section ולפני ה-service-tags -->
+
+    <!-- Founder Section -->
+    <section class="founder-intro">
+        <div class="founder-intro-container">
+            <div class="founder-intro-image">
+                <img src="images/profile picture.jpg" alt="עו״ד יוסי קריספל - בעלים ומייסד מכון תבל">
+                <div class="founder-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    בודק מוסמך
+                </div>
+            </div>
+
+            <div class="founder-intro-content">
+                <div class="founder-intro-label">המומחה שלנו</div>
+                <h2>עו״ד יוסי קריספל</h2>
+                <p class="founder-intro-title">בעלים ומייסד מכון תבל | מנכ״ל לשכת בודקי הפוליגרף בישראל</p>
+
+                <p class="founder-intro-text">
+                    בעל הסמכה ביטחונית וניסיון נרחב בניהול, תשאול וחקירות פרטיות וביטחוניות.
+                    בוגר תואר במשפטים L.L.B, בעלים של משרד עו"ד המתמחה בענפי המגזר הפרטי, הציבורי והממלכתי.
+                </p>
+
+                <div class="founder-intro-highlights">
+                    <div class="highlight-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                        <span>בודק פוליגרף מוסמך - אוניברסיטת בר אילן</span>
+                    </div>
+                    <div class="highlight-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="8.5" cy="7" r="4"/>
+                            <polyline points="17 11 19 13 23 9"/>
+                        </svg>
+                        <span>ייעוץ משפטי מקדים ומשלים לכל בדיקה</span>
+                    </div>
+                </div>
+
+                <a href="about.html" class="founder-intro-link">
+                    קראו עוד אודותינו
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* ===== Founder Intro Section ===== */
+        .founder-intro {
+            padding: 80px 20px;
+            background: #ffffff;
+            position: relative;
+        }
+
+        .founder-intro-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* Image Side */
+        .founder-intro-image {
+            position: relative;
+        }
+
+        .founder-intro-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(26, 43, 95, 0.15);
+            display: block;
+        }
+
+        .founder-badge {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #00d4ff 0%, #3498db 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+            white-space: nowrap;
+        }
+
+        /* Content Side */
+        .founder-intro-content {
+            padding-top: 10px;
+        }
+
+        .founder-intro-label {
+            color: #3498db;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .founder-intro-content h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a2b5f;
+            margin-bottom: 8px;
+            font-family: 'Heebo', sans-serif;
+        }
+
+        .founder-intro-title {
+            font-size: 18px;
+            color: #6c757d;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .founder-intro-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+
+        .founder-intro-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: #2c3e50;
+        }
+
+        .highlight-item svg {
+            color: #3498db;
+            flex-shrink: 0;
+        }
+
+        .founder-intro-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #3498db;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .founder-intro-link:hover {
+            border-bottom-color: #3498db;
+            gap: 12px;
+            color: #1a2b5f;
+        }
+
+        .founder-intro-link svg {
+            transition: transform 0.3s ease;
+        }
+
+        .founder-intro-link:hover svg {
+            transform: translateX(-4px);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .founder-intro {
+                padding: 60px 20px;
+            }
+
+            .founder-intro-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .founder-intro-image {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .founder-intro-content h2 {
+                font-size: 28px;
+            }
+
+            .founder-intro-title {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .founder-intro {
+                padding: 50px 20px;
+            }
+
+            .founder-intro-content h2 {
+                font-size: 24px;
+            }
+
+            .founder-intro-highlights {
+                gap: 12px;
+            }
+
+            .highlight-item {
+                font-size: 14px;
+            }
+
+            .founder-badge {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
     <!-- Service Tags -->
     <section class="service-tags">
         <div class="section-header">
@@ -472,9 +706,9 @@
                     <li><a href="index.html">דף הבית</a></li>
                     <li><a href="what-is-polygraph.html">מהו פוליגרף?</a></li>
                     <li><a href="articles.html">מאמרים</a></li>
-                    <li><a href="faq.html">שאלות נפוצות</a></li>
                     <li><a href="#contact">צרו קשר</a></li>
                     <li><a href="privacy.html">מדיניות הפרטיות</a></li>
+                    <li><a href="accessibility.html"> הצהרת נגישות</a></li>
                 </ul>
             </div>
             
@@ -492,9 +726,9 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
-            <p>© 2026 תבל - שרותי פוליגרף מתקדמים. כל הזכויות שמורות.</p>
+            <p>© 2026 תבל - שרותי פוליגרף מתקדמים. כל הזכויות שמורות. <a href="privacy.html" style="color: #c9a227; text-decoration: none; margin-right: 15px;">מדיניות פרטיות</a> <a href="accessibility.html" style="color: #c9a227;font-size: large; text-decoration: none;">| הצהרת נגישות</a></p>
         </div>
     </footer>
 
