@@ -332,43 +332,62 @@ nav {
   border-color: rgba(255, 255, 255, 0.6);
 }
 
-/* רספונסיביות למובייל */
+/* --- רספונסיביות למובייל --- */
 @media (max-width: 768px) {
   .hero {
-    height: auto;
-    padding: 100px 0;
+    height: 85vh; /* מגדיל את הגובה כדי שיהיה לאן לרדת */
+    display: flex;
+    align-items: flex-end; /* דוחף את כל התוכן למטה */
+    padding: 0 0 50px 0; /* מרווח מהקצה התחתון של המסך */
+    background-position: center;
   }
+
   .hero-content {
-    padding: 0 30px;
+    padding: 0 20px;
     text-align: center;
+    width: 100%;
   }
+
+  .hero-text h1 {
+    font-size: 32px; /* מקטין מעט את הכותרת למובייל */
+    margin-bottom: 15px;
+  }
+
   .hero-text p {
-    margin: 0 auto 40px;
+    margin: 0 auto 30px;
     border-right: none;
     padding-right: 0;
+    font-size: 18px;
   }
-      }
+
+  /* סידור הכפתורים אחד מתחת לשני */
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
   .btn-primary {
-    padding: 12px 28px;
-    font-size: 14px;
+    padding: 14px 40px;
+    font-size: 16px;
+    width: 80%; /* כפתור רחב ונוח ללחיצה */
+    justify-content: center;
   }
+
   .btn-secondary {
-    margin-right: 0;
-    margin-top: 15px;
+    margin-right: 0; /* ביטול המרווח מהגרסה השולחנית */
+    padding: 14px 40px;
+    font-size: 16px;
+    width: 80%;
+    justify-content: center;
   }
-  /* בהגדרות הרגילות הטקסט יופיע */
-.hero-subtitle {
-    display: block;
-}
 
-/* הגדרה למובייל - מסכים קטנים מ-768 פיקסלים */
-@media (max-width: 768px) {
-    .hero-subtitle {
-        display: none !important;
-    }
+  /* הסתרת כותרת המשנה אם קיימת */
+  .hero-subtitle {
+    display: none !important;
+  }
 }
-}
-
 /* Floating elements */
 .floating-element {
     position: absolute;
