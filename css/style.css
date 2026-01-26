@@ -351,6 +351,17 @@ nav {
     margin-right: 0;
     margin-top: 15px;
   }
+  /* בהגדרות הרגילות הטקסט יופיע */
+.hero-subtitle {
+    display: block;
+}
+
+/* הגדרה למובייל - מסכים קטנים מ-768 פיקסלים */
+@media (max-width: 768px) {
+    .hero-subtitle {
+        display: none !important;
+    }
+}
 }
 /* Floating elements */
 .floating-element {
