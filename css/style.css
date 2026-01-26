@@ -334,54 +334,59 @@ nav {
 
 /* --- רספונסיביות למובייל --- */
 /* --- רספונסיביות למובייל --- */
+/* החלף את הקוד הזה בקטע הרספונסיבי למובייל בקובץ ה-CSS שלך */
+
+/* --- רספונסיביות למובייל --- */
 @media (max-width: 768px) {
   .hero {
-    height: 85vh; 
+    height: 100vh; 
     display: flex;
-    align-items: flex-start; /* מחזיר את התוכן להתחלה מלמעלה */
-    padding-top: 60px; /* מרווח של הטקסט מהקצה העליון */
-    padding-bottom: 40px;
+    align-items: center;
+    padding: 0;
   }
 
   .hero-content {
     display: flex;
     flex-direction: column;
-    height: 100%; /* גורם לתוכן למתוח את כל גובה ה-Hero */
-    padding: 0 30px;
-    text-align: center;
+    justify-content: space-between; /* מפזר בין כותרת לכפתורים */
+    height: 100%; /* תופס את כל גובה ה-Hero */
+    width: 100%;
+    padding: 100px 30px 40px; /* מרווח עליון (מתחת לתפריט), צדדים ותחתון */
   }
 
   .hero-text {
-    flex-grow: 1; /* גורם לטקסט לתפוס את השטח העליון */
+    text-align: center;
   }
 
   .hero-text h1 {
-    font-size: 35px;
+    font-size: 32px;
     margin-bottom: 15px;
+    line-height: 1.2;
   }
 
   .hero-text p {
     margin: 0 auto;
     border-right: none;
     padding-right: 0;
-    font-size: 19px;
+    font-size: 18px;
+    max-width: 90%;
   }
 
-  /* --- שליטה בכפתורים --- */
+  /* --- שליטה בכפתורים - דוחף אותם לתחתית --- */
   .hero-actions {
-    margin-top: auto; /* זה הקסם: דוחף את הכפתורים הכי למטה שאפשר בתוך הקונטיינר */
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding-bottom: 20px; /* מרווח מהקצה התחתון */
+    gap: 12px;
+    width: 100%;
   }
 
   .btn-primary, .btn-secondary {
-    width: 100%; /* כפתורים רחבים שתופסים את רוב המסך במובייל */
+    width: 100%; 
     box-sizing: border-box;
     justify-content: center;
     margin: 0; 
-    padding: 16px;
+    padding: 15px;
+    font-size: 16px;
   }
 
   .hero-subtitle {
