@@ -127,33 +127,3 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('loaded');
     console.log('תבל - שרותי פוליגרף מתקדמים - האתר נטען בהצלחה');
 });
-// ============================================
-// ADVANCED PAGE TRANSITIONS
-// ============================================
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Handle link clicks
-    const links = document.querySelectorAll('a[href^="/"]:not([target="_blank"]), a[href$=".html"]:not([target="_blank"])');
-    
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // Skip anchor links and special links
-            if (href.startsWith('#') || href.startsWith('tel:') || 
-                href.startsWith('mailto:') || href.startsWith('https://wa.me')) {
-                return;
-            }
-            
-            e.preventDefault();
-            
-            // Add transition class
-            document.body.classList.add('page-transitioning');
-            
-            // Navigate after animation
-            setTimeout(() => {
-                window.location.href = href;
-            }, 300);
-        });
-    });
-});
