@@ -332,70 +332,73 @@ nav {
   border-color: rgba(255, 255, 255, 0.6);
 }
 
-/* --- רספונסיביות למובייל - החלף את הקוד הקיים בזה --- */
+/* --- רספונסיביות למובייל - קוד מתוקן סופי --- */
 @media (max-width: 768px) {
   .hero {
     height: 100vh; 
-    min-height: 600px; /* מינימום גובה כדי שלא יהיה צפוף מדי */
+    min-height: 600px;
     display: flex;
     align-items: stretch;
     padding: 0;
   }
 
   .hero-image-overlay {
-    filter: brightness(0.8) contrast(1.1); /* מעט יותר כהה במובייל */
+    filter: brightness(0.9) contrast(1.05);
+    background-size: cover; /* שינוי ל-cover כדי שהתמונה תכסה טוב יותר */
+    background-position: center;
   }
 
   .hero-overlay-shadow {
-    background: linear-gradient(to top, 
-      #050b17 0%, 
-      rgba(5, 11, 23, 0.85) 25%, 
-      rgba(5, 11, 23, 0.6) 50%,
-      rgba(5, 11, 23, 0.8) 75%,
-      #050b17 100%); /* גרדיאנט שמכסה מעט למעלה ולמטה */
+    background: linear-gradient(to bottom, 
+      rgba(5, 11, 23, 0.75) 0%, 
+      rgba(5, 11, 23, 0.5) 40%, 
+      rgba(5, 11, 23, 0.7) 100%);
   }
 
   .hero-content {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* מפזר בין הטקסט לכפתורים */
+    flex-direction: column; /* סדר רגיל */
+    justify-content: space-between; /* מפזר בין התוכן */
     height: 100%;
     width: 100%;
-    padding: 120px 25px 50px; /* מרווח מהתפריט למעלה ומהתחתית */
+    padding: 110px 25px 45px;
   }
 
   .hero-text {
     text-align: center;
+    order: 1; /* הטקסט ראשון - למעלה */
   }
 
   .hero-text h1 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    line-height: 1.3;
+    font-size: 32px;
+    margin-bottom: 12px;
+    line-height: 1.25;
   }
 
   .hero-text h1 span {
-    display: block; /* כל השורה בשורה נפרדת */
-    margin-top: 5px;
+    display: block;
+    margin-top: 8px;
+    font-size: 0.85em;
   }
 
   .hero-text p.hero-subtitle {
-    display: block !important; /* מציג את התת-כותרת */
-    margin: 15px auto 0;
+    display: block !important;
+    margin: 12px auto 0;
     border-right: none;
     padding-right: 0;
-    font-size: 16px;
-    max-width: 85%;
+    font-size: 15px;
+    max-width: 90%;
     line-height: 1.5;
+    color: rgba(255, 255, 255, 0.75);
   }
 
-  /* --- שליטה בכפתורים - דוחף אותם לתחתית --- */
+  /* --- הכפתורים למטה --- */
   .hero-actions {
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 100%;
-    margin-top: auto; /* דוחף את הכפתורים למטה */
+    order: 2; /* הכפתורים שניים - למטה */
   }
 
   .btn-primary {
@@ -403,7 +406,7 @@ nav {
     box-sizing: border-box;
     justify-content: center;
     margin: 0; 
-    padding: 16px 20px;
+    padding: 17px 20px;
     font-size: 17px;
   }
   
@@ -412,7 +415,7 @@ nav {
     box-sizing: border-box;
     justify-content: center;
     margin: 0; 
-    padding: 16px 20px;
+    padding: 17px 20px;
     font-size: 17px;
   }
 }
@@ -420,19 +423,26 @@ nav {
 /* עבור מסכים ממש קטנים */
 @media (max-width: 480px) {
   .hero {
-    min-height: 550px;
+    min-height: 570px;
   }
   
   .hero-content {
-    padding: 100px 20px 40px;
+    padding: 100px 22px 40px;
   }
   
   .hero-text h1 {
-    font-size: 24px;
+    font-size: 27px;
   }
   
   .hero-text p.hero-subtitle {
-    font-size: 15px;
+    font-size: 14px;
+    max-width: 95%;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 16px 18px;
+    font-size: 16px;
   }
 }
 /* Floating elements */
