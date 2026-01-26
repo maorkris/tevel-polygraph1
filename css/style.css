@@ -1483,3 +1483,27 @@ footer {
   color: #ffffff;
   text-decoration: underline;
 }
+/* ============================================
+   ADVANCED PAGE TRANSITIONS
+============================================ */
+
+body {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.page-loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.page-transitioning {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
