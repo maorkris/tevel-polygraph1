@@ -1483,3 +1483,8 @@ footer {
   color: #ffffff;
   text-decoration: underline;
 }
+/* עבור דפים פנימיים */
+section.hero.hero-internal {
+    min-height: 300px; /* במקום הגובה המקורי */
+    height: 50vh; /* או גובה אחר לפי העדפה */
+}
