@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Page load animation
     setTimeout(() => {
         document.body.classList.add('page-loaded');
-    }, 50);
+    }, 20);
     
     // Handle link clicks
     const links = document.querySelectorAll('a[href^="/"]:not([target="_blank"]), a[href$=".html"]:not([target="_blank"])');
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Navigate after animation
             setTimeout(() => {
                 window.location.href = href;
-            }, 500);
+            }, 300);
         });
     });
 });
