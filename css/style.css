@@ -333,57 +333,57 @@ nav {
 }
 
 /* --- רספונסיביות למובייל --- */
+/* --- רספונסיביות למובייל --- */
 @media (max-width: 768px) {
   .hero {
-    height: 85vh; /* מגדיל את הגובה כדי שיהיה לאן לרדת */
+    height: 85vh; 
     display: flex;
-    align-items: flex-end; /* דוחף את כל התוכן למטה */
-    padding: 0 0 50px 0; /* מרווח מהקצה התחתון של המסך */
-    background-position: center;
+    align-items: flex-start; /* מחזיר את התוכן להתחלה מלמעלה */
+    padding-top: 60px; /* מרווח של הטקסט מהקצה העליון */
+    padding-bottom: 40px;
   }
 
   .hero-content {
-    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* גורם לתוכן למתוח את כל גובה ה-Hero */
+    padding: 0 30px;
     text-align: center;
-    width: 100%;
+  }
+
+  .hero-text {
+    flex-grow: 1; /* גורם לטקסט לתפוס את השטח העליון */
   }
 
   .hero-text h1 {
-    font-size: 32px; /* מקטין מעט את הכותרת למובייל */
+    font-size: 35px;
     margin-bottom: 15px;
   }
 
   .hero-text p {
-    margin: 0 auto 30px;
+    margin: 0 auto;
     border-right: none;
     padding-right: 0;
-    font-size: 18px;
+    font-size: 19px;
   }
 
-  /* סידור הכפתורים אחד מתחת לשני */
+  /* --- שליטה בכפתורים --- */
   .hero-actions {
+    margin-top: auto; /* זה הקסם: דוחף את הכפתורים הכי למטה שאפשר בתוך הקונטיינר */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 12px;
+    gap: 15px;
+    padding-bottom: 20px; /* מרווח מהקצה התחתון */
   }
 
-  .btn-primary {
-    padding: 14px 40px;
-    font-size: 16px;
-    width: 80%; /* כפתור רחב ונוח ללחיצה */
+  .btn-primary, .btn-secondary {
+    width: 100%; /* כפתורים רחבים שתופסים את רוב המסך במובייל */
+    box-sizing: border-box;
     justify-content: center;
+    margin: 0; 
+    padding: 16px;
   }
 
-  .btn-secondary {
-    margin-right: 0; /* ביטול המרווח מהגרסה השולחנית */
-    padding: 14px 40px;
-    font-size: 16px;
-    width: 80%;
-    justify-content: center;
-  }
-
-  /* הסתרת כותרת המשנה אם קיימת */
   .hero-subtitle {
     display: none !important;
   }
