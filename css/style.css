@@ -1552,4 +1552,20 @@ section.hero.hero-internal {
         text-align: center;
     }
 }
+/* --- תיקון לתוסף נגישות --- */
+#accessibility-wrapper {
+    position: fixed !important;
+    bottom: 20px !important; 
+    left: 20px !important; /* ממוקם בצד שמאל כדי לא להסתיר את הוואטסאפ/צ'אט */
+    z-index: 2147483647 !important; /* המספר הכי גבוה האפשרי ב-CSS */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    height: auto !important;
+}
 
+/* וידוא שהתוסף לא נחתך בגלל הגדרות גלילה */
+body {
+    position: relative; 
+}
