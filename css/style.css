@@ -1552,3 +1552,16 @@ section.hero.hero-internal {
         text-align: center;
     }
 }
+/* === Accessibility widget fix === */
+#nagishli,
+.nagishli,
+.nagishli-widget,
+.accessibility,
+[nl-widget] {
+    position: fixed !important;
+    z-index: 99999 !important;
+    bottom: 20px !important;
+    left: 20px !important;
+    right: auto !important;
+    overflow: visible !important;
+}
