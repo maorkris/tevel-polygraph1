@@ -93,15 +93,6 @@
         });
     });
 
-//הנגשה
-<script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
-  
-<script src="https://www.negishim.com/accessibility/accessibility_pro.js" type="text/javascript"></script>
-<script type="text/javascript">
-    accessibility_rtl = true;
-    pixel_from_side = 20;
-    pixel_from_start = 20;
-</script>
 
 
     // ============================================
