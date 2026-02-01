@@ -184,48 +184,7 @@
     </a>
 
     <script src="js/main.js"></script>
-<script src="https://nagich.co.il/plugin/nagich.js"></script>
 
-<button
-  id="accessibility-btn"
-  aria-label="תפריט נגישות"
-  aria-expanded="false"
->
-נגישות ♿
-</button>
-
-<div id="accessibility-panel" hidden>
-  <button onclick="toggleFont()">הגדלת טקסט</button>
-  <button onclick="toggleContrast()">ניגודיות גבוהה</button>
-  <button onclick="toggleLinks()">הדגשת קישורים</button>
-  <button onclick="toggleBW()">שחור לבן</button>
-</div>
-<script>
-const panel = document.getElementById("accessibility-panel");
-const btn = document.getElementById("accessibility-btn");
-
-btn.onclick = function () {
-  const isOpen = !panel.hasAttribute("hidden");
-  panel.toggleAttribute("hidden");
-  btn.setAttribute("aria-expanded", String(!isOpen));
-};
-
-function toggleFont() {
-  document.body.classList.toggle("access-font");
-}
-
-function toggleContrast() {
-  document.body.classList.toggle("access-contrast");
-}
-
-function toggleLinks() {
-  document.body.classList.toggle("access-links");
-}
-
-function toggleBW() {
-  document.body.classList.toggle("access-bw");
-}
-</script>
 
 
 </body>
