@@ -1553,3 +1553,53 @@ section.hero.hero-internal {
     }
 }
 
+/* === Accessibility manual solution === */
+
+#accessibility-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 99999;
+    padding: 10px 14px;
+    font-size: 14px;
+    background: #000;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#accessibility-panel {
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+    z-index: 99999;
+    background: #fff;
+    border: 2px solid #000;
+    padding: 10px;
+}
+
+#accessibility-panel button {
+    display: block;
+    margin-bottom: 6px;
+    width: 100%;
+}
+
+/* מצבי נגישות */
+
+.access-font {
+    font-size: 120%;
+}
+
+.access-contrast {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+.access-links a {
+    text-decoration: underline !important;
+    font-weight: bold;
+}
+
+.access-bw img {
+    filter: grayscale(100%);
+}
