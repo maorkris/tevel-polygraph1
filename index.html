@@ -857,21 +857,22 @@ document.addEventListener('DOMContentLoaded', function() {
         acceptBtn.addEventListener('click', function() {
             // 1. נטרול מיידי של לחיצות על הבאנר כדי שלא יחסום את מה שמתחתיו
             banner.style.pointerEvents = 'none';
-            
+
             // 2. אנימציה של היעלמות
             banner.style.opacity = '0';
             banner.style.transform = 'translateX(-50%) translateY(20px)';
             banner.style.transition = 'all 0.4s ease'; // מוודא שיש אנימציה חלקה
-            
+
             // 3. הסרה מוחלטת מהדף לאחר האנימציה
             setTimeout(() => {
                 banner.style.display = 'none';
                 localStorage.setItem('cookie-confirmed', 'true');
-            }, 400); 
+            }, 400);
         });
     }
 });
 </script>
-
+    <script src="https://widget.tabnav.com/limited-widget.min.js.gz" tnv-data-config='{"language":"he","color":"#405ec3","buttonColor":"#405ec3","buttonSize":"small","widgetSize":"small","widgetLocation":"right","buttonLocation":"top"}' defer></script>
+    <noscript> פתרונות נגישות לאתרי אינטרנט לפי התקן הישראלי 5568<a href="https://tabnav.com/he">הנגשת אתרים</a> </noscript>
 </body>
 </html>
