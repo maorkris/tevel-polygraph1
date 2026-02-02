@@ -1,6 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-    // ============================================
+// ============================================
     // Mobile Menu Toggle
     // ============================================
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -95,6 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+
+
     // ============================================
     // Active Navigation Link
     // ============================================
@@ -126,4 +126,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     document.body.classList.add('loaded');
     console.log('תבל - שרותי פוליגרף מתקדמים - האתר נטען בהצלחה');
-});
