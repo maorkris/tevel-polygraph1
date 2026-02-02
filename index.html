@@ -872,29 +872,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
-    <script>
-        const isMobile = window.innerWidth < 768;
-        const config = {
-            "language": "he",
-            "color": "#405ec3",
-            "buttonColor": "#405ec3",
-            "buttonSize": "small",
-            "widgetSize": "small",
-            "widgetLocation": "right",
-            "buttonPosition": "60%"
-        };
 
-        // רק במסך גדול מוסיפים את buttonLocation
-        if (!isMobile) {
-            config.buttonLocation = "center";
-        }
-
-        const script = document.createElement('script');
-        script.src = 'https://widget.tabnav.com/limited-widget.min.js.gz';
-        script.setAttribute('tnv-data-config', JSON.stringify(config));
-        script.defer = true;
-        document.head.appendChild(script);
-    </script>
 
     <script src="https://cdn.enable.co.il/licenses/enable-L53772bdttxpghew-0226-79115/init.js"></script>
 
