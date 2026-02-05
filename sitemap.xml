@@ -9,14 +9,16 @@
     </url>
 
     <url>
-        <loc>https://tevel-polygraph.co.il/index.html</loc>
+        <loc>https://tevel-polygraph.co.il/what-is-polygraph.html</loc>
         <lastmod>2026-02-05</lastmod>
-        <priority>0.80</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
     </url>
 
     <url>
         <loc>https://tevel-polygraph.co.il/about.html</loc>
         <lastmod>2026-02-05</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
 
@@ -35,12 +37,14 @@
     <url>
         <loc>https://tevel-polygraph.co.il/polygraph-tests.html</loc>
         <lastmod>2026-02-05</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.90</priority>
     </url>
 
     <url>
         <loc>https://tevel-polygraph.co.il/reliability-tests.html</loc>
         <lastmod>2026-02-05</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.90</priority>
     </url>
 
@@ -71,6 +75,7 @@
     <url>
         <loc>https://tevel-polygraph.co.il/articles.html</loc>
         <lastmod>2026-02-05</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
 
