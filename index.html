@@ -852,12 +852,14 @@ document.addEventListener('DOMContentLoaded', function() {
 </style>
     <!--
         ══════════════════════════════════════════════════════
-        🍪  סרגל עוגיות - תבל פוליגרף (גרסה מתוקנת)
+        🍪  סרגל עוגיות - תבל פוליגרף (v3 - מתוקן למובייל)
         ══════════════════════════════════════════════════════
+
+        במובייל: הסרגל מופיע למעלה — לא מפריע לוואטסאפ/נגישות
+        בדסקטופ: הסרגל מופיע למטה כרגיל
 
         הוראות:
         1. מחק לגמרי את כל הקוד הישן של סרגל העוגיות
-           (כולל ה-HTML הישן, ה-CSS הישן וה-JS הישן)
         2. הדבק את כל הקוד הזה לפני </body>
     -->
 
@@ -886,9 +888,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         #tevel-cookie-banner.tevel-show {
             display: block;
-            animation: tevelCookieEnter 0.7s cubic-bezier(0.16,1,0.3,1) 0.8s forwards;
+            animation: tevelCookieEnter 0.7s cubic-bezier(0.16,1,0.3,1) 0.5s forwards;
         }
 
+        /* Gradient border */
         #tevel-cookie-banner::before {
             content: '';
             position: absolute;
@@ -903,6 +906,7 @@ document.addEventListener('DOMContentLoaded', function() {
             z-index: 1;
         }
 
+        /* Top glow line */
         #tevel-cookie-banner::after {
             content: '';
             position: absolute;
@@ -914,13 +918,14 @@ document.addEventListener('DOMContentLoaded', function() {
             z-index: 2;
         }
 
+        /* === Desktop animation: slide up from bottom === */
         @keyframes tevelCookieEnter {
             from { opacity: 0; transform: translateX(-50%) translateY(24px) scale(0.97); }
             to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
         }
 
         #tevel-cookie-banner.tevel-hide {
-            animation: tevelCookieExit 0.5s cubic-bezier(0.55,0,1,0.45) forwards !important;
+            animation: tevelCookieExit 0.45s cubic-bezier(0.55,0,1,0.45) forwards !important;
             pointer-events: none !important;
         }
 
@@ -928,6 +933,7 @@ document.addEventListener('DOMContentLoaded', function() {
             to { opacity: 0; transform: translateX(-50%) translateY(20px) scale(0.97); }
         }
 
+        /* Inner layout */
         .tevel-cookie-body {
             position: relative;
             z-index: 3;
@@ -937,6 +943,7 @@ document.addEventListener('DOMContentLoaded', function() {
             padding: 20px 26px;
         }
 
+        /* Shield icon */
         .tevel-cookie-shield {
             flex-shrink: 0;
             width: 46px;
@@ -965,15 +972,10 @@ document.addEventListener('DOMContentLoaded', function() {
             50% { opacity: 0.8; transform: scale(1.08); }
         }
 
-        .tevel-cookie-shield svg {
-            width: 24px;
-            height: 24px;
-        }
+        .tevel-cookie-shield svg { width: 24px; height: 24px; }
 
-        .tevel-cookie-content {
-            flex: 1;
-            min-width: 0;
-        }
+        /* Text */
+        .tevel-cookie-content { flex: 1; min-width: 0; }
 
         .tevel-cookie-title {
             font-size: 15px;
@@ -1013,6 +1015,7 @@ document.addEventListener('DOMContentLoaded', function() {
             border-bottom-color: rgba(91,192,235,0.5);
         }
 
+        /* Buttons */
         .tevel-cookie-buttons {
             display: flex;
             align-items: center;
@@ -1051,9 +1054,7 @@ document.addEventListener('DOMContentLoaded', function() {
             transition: left 0.5s ease;
         }
 
-        .tevel-btn-accept:hover::before {
-            left: 100%;
-        }
+        .tevel-btn-accept:hover::before { left: 100%; }
 
         .tevel-btn-accept:hover {
             box-shadow: 0 4px 20px rgba(109,40,217,0.4), 0 0 0 1px rgba(255,255,255,0.1) inset;
@@ -1065,11 +1066,7 @@ document.addEventListener('DOMContentLoaded', function() {
             box-shadow: 0 2px 8px rgba(109,40,217,0.2);
         }
 
-        .tevel-btn-accept svg {
-            width: 15px;
-            height: 15px;
-            flex-shrink: 0;
-        }
+        .tevel-btn-accept svg { width: 15px; height: 15px; flex-shrink: 0; }
 
         .tevel-btn-decline {
             padding: 11px 18px;
@@ -1091,70 +1088,115 @@ document.addEventListener('DOMContentLoaded', function() {
             background: rgba(255,255,255,0.03);
         }
 
-        @media (max-width: 680px) {
+
+        /* ═══════════════════════════════════════════════
+           📱 MOBILE — banner moves to TOP
+           ═══════════════════════════════════════════════ */
+
+        @media (max-width: 768px) {
             #tevel-cookie-banner {
-                bottom: 14px;
-                width: calc(100% - 24px);
-                border-radius: 14px;
+                /* העברה למעלה */
+                bottom: auto;
+                top: 0;
+                left: 0;
+                right: 0;
+                transform: none;
+                width: 100%;
+                max-width: 100%;
+                border-radius: 0 0 16px 16px;
+                box-shadow: 0 8px 30px rgba(0,0,0,0.4), 0 0 40px -10px rgba(80,48,144,0.15);
             }
+
             #tevel-cookie-banner::before {
-                border-radius: 14px;
+                border-radius: 0 0 16px 16px;
             }
+
+            /* Mobile animation: slide down from top */
+            #tevel-cookie-banner.tevel-show {
+                animation: tevelCookieEnterMobile 0.6s cubic-bezier(0.16,1,0.3,1) 0.5s forwards;
+            }
+
+            @keyframes tevelCookieEnterMobile {
+                from { opacity: 0; transform: translateY(-100%); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            #tevel-cookie-banner.tevel-hide {
+                animation: tevelCookieExitMobile 0.4s cubic-bezier(0.55,0,1,0.45) forwards !important;
+            }
+
+            @keyframes tevelCookieExitMobile {
+                to { opacity: 0; transform: translateY(-100%); }
+            }
+
+            /* Top glow line moves to bottom edge on mobile */
+            #tevel-cookie-banner::after {
+                top: auto;
+                bottom: 0;
+                left: 15%;
+                right: 15%;
+            }
+
             .tevel-cookie-body {
-                flex-wrap: wrap;
-                gap: 14px;
-                padding: 18px 20px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+                padding: 16px 18px 18px;
             }
+
+            /* Top row: shield + text side by side */
+            .tevel-cookie-top-row {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+
             .tevel-cookie-shield {
-                width: 40px;
-                height: 40px;
+                width: 38px;
+                height: 38px;
                 border-radius: 10px;
             }
-            .tevel-cookie-shield svg {
-                width: 20px;
-                height: 20px;
-            }
-            .tevel-cookie-content {
-                flex: 1 1 calc(100% - 56px);
-                min-width: 0;
-            }
-            .tevel-cookie-title {
-                font-size: 14px;
-            }
-            .tevel-cookie-desc {
-                font-size: 12.5px;
-            }
+
+            .tevel-cookie-shield svg { width: 20px; height: 20px; }
+
+            .tevel-cookie-title { font-size: 14px; margin-bottom: 2px; }
+            .tevel-cookie-desc { font-size: 12.5px; line-height: 1.5; }
+
+            /* Buttons row: full width */
             .tevel-cookie-buttons {
                 width: 100%;
                 gap: 8px;
             }
+
             .tevel-btn-accept {
                 flex: 1;
                 justify-content: center;
-                padding: 11px 16px;
-                font-size: 13.5px;
+                padding: 12px 16px;
+                font-size: 14px;
             }
+
             .tevel-btn-decline {
-                padding: 11px 16px;
-                font-size: 12.5px;
+                padding: 12px 18px;
+                font-size: 13px;
             }
         }
 
         @media (max-width: 400px) {
-            #tevel-cookie-banner {
-                bottom: 10px;
-                width: calc(100% - 16px);
-            }
             .tevel-cookie-body {
-                padding: 16px;
-                gap: 12px;
+                padding: 14px 14px 16px;
+                gap: 10px;
             }
+
             .tevel-cookie-shield {
-                display: none;
+                width: 34px;
+                height: 34px;
             }
-            .tevel-cookie-content {
-                flex: 1 1 100%;
-            }
+
+            .tevel-cookie-shield svg { width: 18px; height: 18px; }
+
+            .tevel-cookie-desc { font-size: 12px; }
+            .tevel-btn-accept { font-size: 13.5px; padding: 11px 14px; }
+            .tevel-btn-decline { font-size: 12.5px; padding: 11px 14px; }
         }
     </style>
 
@@ -1162,27 +1204,29 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- ═══ HTML ═══ -->
     <div id="tevel-cookie-banner" role="dialog" aria-label="הודעת עוגיות">
         <div class="tevel-cookie-body">
-            <div class="tevel-cookie-shield">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="tevelShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#7c3aed"/>
-                            <stop offset="100%" stop-color="#20a0d0"/>
-                        </linearGradient>
-                    </defs>
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="url(#tevelShieldGrad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M9 12l2 2 4-4" stroke="url(#tevelShieldGrad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <div class="tevel-cookie-content">
-                <div class="tevel-cookie-title">
-                    <span class="tevel-dot"></span>
-                    שקיפות ופרטיות
+            <div class="tevel-cookie-top-row">
+                <div class="tevel-cookie-shield">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="tevelShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#7c3aed"/>
+                                <stop offset="100%" stop-color="#20a0d0"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="url(#tevelShieldGrad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 12l2 2 4-4" stroke="url(#tevelShieldGrad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </div>
-                <p class="tevel-cookie-desc">
-                    אנו משתמשים בעוגיות לצורך תפעול תקין, אבטחה ושיפור חוויית הגלישה.
-                    <a href="privacy.html">מדיניות הפרטיות</a>
-                </p>
+                <div class="tevel-cookie-content">
+                    <div class="tevel-cookie-title">
+                        <span class="tevel-dot"></span>
+                        שקיפות ופרטיות
+                    </div>
+                    <p class="tevel-cookie-desc">
+                        אנו משתמשים בעוגיות לצורך תפעול תקין, אבטחה ושיפור חוויית הגלישה.
+                        <a href="privacy.html">מדיניות הפרטיות</a>
+                    </p>
+                </div>
             </div>
             <div class="tevel-cookie-buttons">
                 <button id="tevel-accept" class="tevel-btn-accept">
@@ -1200,25 +1244,18 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- ═══ JS ═══ -->
     <script>
         (function () {
-            // === פונקציות עזר לשמירת עוגייה (fallback ל-localStorage) ===
             function saveConsent(value) {
-                // שיטה 1: localStorage
-                try {
-                    localStorage.setItem('tevel_cookie_consent', value);
-                } catch (e) {}
-                // שיטה 2: cookie רגיל (עובד גם ב-file:// וגם בין דפים)
+                try { localStorage.setItem('tevel_cookie_consent', value); } catch (e) {}
                 var d = new Date();
-                d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000); // שנה
+                d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
                 document.cookie = 'tevel_cookie_consent=' + value + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
             }
 
             function getConsent() {
-                // בדיקה 1: localStorage
                 try {
                     var ls = localStorage.getItem('tevel_cookie_consent');
                     if (ls) return ls;
                 } catch (e) {}
-                // בדיקה 2: cookie רגיל
                 var cookies = document.cookie.split(';');
                 for (var i = 0; i < cookies.length; i++) {
                     var c = cookies[i].trim();
@@ -1229,20 +1266,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 return null;
             }
 
-            // === לוגיקה ראשית ===
             var banner = document.getElementById('tevel-cookie-banner');
             if (!banner) return;
 
-            // אם כבר ענה — לא מציגים
             if (getConsent()) {
                 banner.style.display = 'none';
                 return;
             }
 
-            // מציגים את הבאנר
             banner.classList.add('tevel-show');
 
-            // סגירה
             function dismiss(choice) {
                 saveConsent(choice);
                 banner.classList.remove('tevel-show');
