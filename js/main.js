@@ -120,7 +120,13 @@
             });
         });
     }
-
+// טעינת תוסף נגישות Enable
+(function() {
+    var s = document.createElement('script');
+    s.src = 'https://cdn.enable.co.il/licenses/enable-L53772bdttxpghew-0226-79115/init.js';
+    s.async = true;
+    document.body.appendChild(s);
+})();
     // ============================================
     // Init
     // ============================================
