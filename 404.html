@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="he" dir="rtl">
 <head>
     <meta charset="utf-8">
-    <title>מפנה לאתר החדש...</title>
+    <title>מפנה...</title>
     <script>
-        // שמירת הנתיב הישן למקרה שתרצה לטפל בו בעתיד
-        sessionStorage.redirect = location.href;
-
-        // הפניה מיידית לדף הבית
-        window.location.href = "https://tevel-polygraph.co.il";
+        // אם הכתובת מכילה .html - הפנה לכתובת הנקייה
+        var path = window.location.pathname;
+        if (path.endsWith('.html')) {
+            var cleanPath = path.replace('.html', '/');
+            window.location.replace(window.location.origin + cleanPath);
+        } else {
+            // דף לא נמצא - הפנה לדף הבית
+            window.location.replace("https://tevel-polygraph.co.il");
+        }
     </script>
-    <meta http-equiv="refresh" content="0; url=https://tevel-polygraph.co.il">
+    <meta http-equiv="refresh" content="1; url=https://tevel-polygraph.co.il">
 </head>
 <body>
-<p>מעביר אותך לאתר החדש...</p>
+<p>מעביר אותך...</p>
 </body>
 </html>
