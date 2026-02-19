@@ -599,7 +599,16 @@
         .solution-text { color:var(--white); font-size:1.1rem; font-weight:500; display:flex; align-items:center; justify-content:center; gap:12px; }
         .solution-icon { color:var(--accent-cyan); flex-shrink:0; }
         .highlight-word { color:var(--accent-cyan); font-weight:700; }
+        /* התאמה למסכי דסקטופ - מכריח 6 כרטיסיות בשורה */
+        @media (min-width: 1024px) {
+            .why-professional .why-content {
+                max-width: 1150px; /* מגדילים קצת את אזור התוכן כדי שיהיה מקום לכולם */
+            }
 
+            .risks-grid {
+                grid-template-columns: repeat(6, 1fr); /* מכריח בדיוק 6 עמודות שוות */
+            }
+        }
         /* === PROCESS === */
         .process { padding:100px 5%; background:var(--white); }
         .timeline { position:relative; max-width:950px; margin:0 auto; padding:30px 0; }
@@ -980,7 +989,8 @@
         /* === CLIENTS / LOGO CAROUSEL === */
         .clients {
             padding: 20px 5%;
-            background: var(--white);
+            /* רקע שקוף כדי לקבל את צבע הרקע של הסקשנים מעל/מתחת */
+            background: transparent;
             overflow: hidden;
             position: relative;
         }
@@ -996,14 +1006,17 @@
             pointer-events: none;
         }
 
+        /* * חשוב: החליפי את ההקס קוד #f4f4f4 בצבע הרקע המדויק של הסקשן שלך.
+         * אם לא תעשי זאת, יראו מעבר צבע לא קשור.
+         */
         .clients::before {
             right: 0;
-            background: linear-gradient(to left, var(--white), transparent);
+            background: linear-gradient(to left, var(--bg-color, #f4f4f4), transparent);
         }
 
         .clients::after {
             left: 0;
-            background: linear-gradient(to right, var(--white), transparent);
+            background: linear-gradient(to right, var(--bg-color, #f4f4f4), transparent);
         }
 
         .clients .section-header p {
@@ -1013,14 +1026,21 @@
         .clients-carousel-wrapper {
             position: relative;
             margin-top: 30px;
+            overflow: hidden;
         }
 
         .clients-track {
             display: flex;
-            gap: 40px;
-            align-items: center;
+            /* הרוחב המקסימלי מונע מהלוגואים להדחס פנימה */
+            width: max-content;
             animation: clients-scroll 25s linear infinite;
             will-change: transform;
+        }
+
+        .clients-slide {
+            display: flex;
+            gap: 40px;
+            padding-inline-end: 40px; /* הרווח בין סט 1 לסט 2 */
         }
 
         .client-logo {
@@ -1028,7 +1048,7 @@
             width: 180px;
             height: 200px;
             border-radius: 12px;
-            background: var(--gray-light);
+            background: var(--gray-light, #f9f9f9);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1051,9 +1071,13 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
+        /* * מאחר והאתר בעברית (RTL), האלמנטים מסודרים מימין לשמאל.
+         * לכן, כדי לגלול שמאלה ולחשוף את מה שמוסתר, האנימציה צריכה לנוע ימינה (ערך חיובי של 50%).
+         * אם הקרוסלה זזה לכיוון ההפוך ממה שרצית, פשוט שחקני את הערך ל: -50%
+         */
         @keyframes clients-scroll {
             from { transform: translateX(0); }
-            to   { transform: translateX(-150%); }
+            to   { transform: translateX(50%); }
         }
 
         /* Mobile tweak */
@@ -1061,12 +1085,15 @@
             .clients {
                 padding: 60px 5%;
             }
+            .clients-slide {
+                gap: 20px;
+                padding-inline-end: 20px;
+            }
             .client-logo {
                 width: 180px;
                 height: 180px;
             }
         }
-
 
         /* ============================================
            RESPONSIVE - SMALL MOBILE
@@ -1451,7 +1478,6 @@
         <div class="faq-item anim"><div class="faq-question"><span>האם נשמרת דיסקרטיות?</span><div class="faq-icon">+</div></div><div class="faq-answer"><div class="faq-answer-content">בהחלט. כל פנייה נשמרת בסודיות מלאה. הדו"ח נמסר אך ורק למזמין הבדיקה, ואיננו משתפים מידע עם צד שלישי ללא אישור מפורש בכתב.</div></div></div>
     </div>
 </section>
-<!-- Clients / Our Customers -->
 <section class="clients">
     <div class="section-header">
         <h2>הלקוחות שלנו</h2>
@@ -1460,27 +1486,7 @@
 
     <div class="clients-carousel-wrapper">
         <div class="clients-track">
-            <!-- סט 1 של לוגואים -->
-            <div class="client-logo">
-                <img src="/images/client1.png" alt="לקוח 1">
-            </div>
-            <div class="client-logo">
-                <img src="/images/client2.png" alt="לקוח 2">
-            </div>
-            <div class="client-logo">
-                <img src="/images/client3.png" alt="לקוח 3">
-            </div>
-            <div class="client-logo">
-                <img src="/images/client4.png" alt="לקוח 4">
-            </div>
-<!--            <div class="client-logo">-->
-<!--                <img src="images/client5.png" alt="לקוח 5">-->
-<!--            </div>-->
-<!--            <div class="client-logo">-->
-<!--                <img src="images/client6.png" alt="לקוח 6">-->
-<!--            </div>-->
-
-                <!-- סט 2 חוזר בשביל גלילה אינסופית חלקה -->
+            <div class="clients-slide">
                 <div class="client-logo">
                     <img src="/images/client1.png" alt="לקוח 1">
                 </div>
@@ -1493,13 +1499,23 @@
                 <div class="client-logo">
                     <img src="/images/client4.png" alt="לקוח 4">
                 </div>
-<!--                <div class="client-logo">-->
-<!--                    <img src="images/client5.png" alt="לקוח 5">-->
-<!--                </div>-->
-<!--                <div class="client-logo">-->
-<!--                    <img src="images/client6.png" alt="לקוח 6">-->
+            </div>
+
+            <div class="clients-slide">
+                <div class="client-logo">
+                    <img src="/images/client1.png" alt="לקוח 1">
+                </div>
+                <div class="client-logo">
+                    <img src="/images/client2.png" alt="לקוח 2">
+                </div>
+                <div class="client-logo">
+                    <img src="/images/client3.png" alt="לקוח 3">
+                </div>
+                <div class="client-logo">
+                    <img src="/images/client4.png" alt="לקוח 4">
                 </div>
             </div>
+        </div>
     </div>
 </section>
 
@@ -1662,19 +1678,18 @@
         });
     });
 
-        document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
         const track = document.querySelector('.clients-track');
         if (!track) return;
 
         track.addEventListener('mouseenter', () => {
-        track.style.animationPlayState = 'paused';
-    });
+            track.style.animationPlayState = 'paused';
+        });
 
         track.addEventListener('mouseleave', () => {
-        track.style.animationPlayState = 'running';
+            track.style.animationPlayState = 'running';
+        });
     });
-    });
-
 
 </script>
 </body>
