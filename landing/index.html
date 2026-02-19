@@ -18,8 +18,8 @@
             --accent-blue: #3498db;
             --accent-cyan: #00d4ff;
             --light-blue: #e8f4fc;
-            --white: #ffffff;
-            --gray-light: #f5f7fa;
+            --white: #fcfcfc;
+            --gray-light: rgba(226, 227, 229, 0.62);
             --gray: #6c757d;
             --text-dark: #2c3e50;
             --shadow: 0 10px 40px rgba(26, 43, 95, 0.15);
@@ -977,6 +977,96 @@
                 padding-bottom: 90px;
             }
         }
+        /* === CLIENTS / LOGO CAROUSEL === */
+        .clients {
+            padding: 20px 5%;
+            background: var(--white);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .clients::before,
+        .clients::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 80px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .clients::before {
+            right: 0;
+            background: linear-gradient(to left, var(--white), transparent);
+        }
+
+        .clients::after {
+            left: 0;
+            background: linear-gradient(to right, var(--white), transparent);
+        }
+
+        .clients .section-header p {
+            max-width: 700px;
+        }
+
+        .clients-carousel-wrapper {
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .clients-track {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            animation: clients-scroll 25s linear infinite;
+            will-change: transform;
+        }
+
+        .client-logo {
+            flex: 0 0 auto;
+            width: 180px;
+            height: 200px;
+            border-radius: 12px;
+            background: var(--gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            opacity: 0.9;
+            transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(0.2);
+        }
+
+        .client-logo:hover {
+            transform: translateY(-5px);
+            opacity: 1;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        @keyframes clients-scroll {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+
+        /* Mobile tweak */
+        @media (max-width:768px) {
+            .clients {
+                padding: 60px 5%;
+            }
+            .client-logo {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
 
         /* ============================================
            RESPONSIVE - SMALL MOBILE
@@ -1099,12 +1189,12 @@
 
             <h1 class="hero-title">
                 בדיקת פוליגרף <br>
-                <span class="highlight-text">בגדרה והמרכז</span>
+                <span class="highlight-text">באזור השפלה והמרכז</span>
             </h1>
 
             <p class="hero-description">
                 בדיקות פוליגרף לעסקים, חברות ביטוח ולקוחות פרטיים <br>
-                כאשר נדרש בירור אמין לפני קבלת החלטה.
+                הנסיון שלנו לא משקר.
             </p>
 
             <div class="hero-features">
@@ -1123,7 +1213,7 @@
                     </div>
                     <div>
                         <strong>30 שנות ניסיון</strong>
-                        <span>בעל רקע בטחוני עשיר ומומחיות בתחום התשאול והחקירות</span>
+                        <span>בעל רקע ביטחוני עשיר ומומחיות בתחום התשאול והחקירות</span>
                     </div>
                 </div>
             </div>
@@ -1221,7 +1311,7 @@
                     <circle cx="12" cy="10" r="3"/>
                 </svg>
             </div>
-            <span>מיקום נוח בגדרה – שירות בפריסה ארצית</span>
+            <span> שירות בפריסה ארצית</span>
         </div>
     </div>
 </section>
@@ -1361,6 +1451,57 @@
         <div class="faq-item anim"><div class="faq-question"><span>האם נשמרת דיסקרטיות?</span><div class="faq-icon">+</div></div><div class="faq-answer"><div class="faq-answer-content">בהחלט. כל פנייה נשמרת בסודיות מלאה. הדו"ח נמסר אך ורק למזמין הבדיקה, ואיננו משתפים מידע עם צד שלישי ללא אישור מפורש בכתב.</div></div></div>
     </div>
 </section>
+<!-- Clients / Our Customers -->
+<section class="clients">
+    <div class="section-header">
+        <h2>הלקוחות שלנו</h2>
+        <p>במהלך השנים ליווינו עשרות ארגונים, משרדי עורכי דין ולקוחות פרטיים מכל רחבי הארץ, תוך שמירה על דיסקרטיות מלאה.</p>
+    </div>
+
+    <div class="clients-carousel-wrapper">
+        <div class="clients-track">
+            <!-- סט 1 של לוגואים -->
+            <div class="client-logo">
+                <img src="/images/client1.png" alt="לקוח 1">
+            </div>
+            <div class="client-logo">
+                <img src="/images/client2.png" alt="לקוח 2">
+            </div>
+            <div class="client-logo">
+                <img src="/images/client3.png" alt="לקוח 3">
+            </div>
+            <div class="client-logo">
+                <img src="/images/client4.png" alt="לקוח 4">
+            </div>
+<!--            <div class="client-logo">-->
+<!--                <img src="images/client5.png" alt="לקוח 5">-->
+<!--            </div>-->
+<!--            <div class="client-logo">-->
+<!--                <img src="images/client6.png" alt="לקוח 6">-->
+<!--            </div>-->
+
+                <!-- סט 2 חוזר בשביל גלילה אינסופית חלקה -->
+                <div class="client-logo">
+                    <img src="/images/client1.png" alt="לקוח 1">
+                </div>
+                <div class="client-logo">
+                    <img src="/images/client2.png" alt="לקוח 2">
+                </div>
+                <div class="client-logo">
+                    <img src="/images/client3.png" alt="לקוח 3">
+                </div>
+                <div class="client-logo">
+                    <img src="/images/client4.png" alt="לקוח 4">
+                </div>
+<!--                <div class="client-logo">-->
+<!--                    <img src="images/client5.png" alt="לקוח 5">-->
+<!--                </div>-->
+<!--                <div class="client-logo">-->
+<!--                    <img src="images/client6.png" alt="לקוח 6">-->
+                </div>
+            </div>
+    </div>
+</section>
 
 <!-- Bottom CTA / Contact -->
 <section class="bottom-cta" id="contact">
@@ -1374,14 +1515,45 @@
         <div class="bottom-cta-grid">
             <div class="contact-methods">
                 <a href="tel:052-4006777" class="contact-method">
-                    <div class="cm-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-                    <div class="cm-text"><h4>התקשרו עכשיו</h4><span dir="ltr">052-4006777</span></div>
+                    <div class="cm-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <div class="cm-text">
+                        <h4>התקשרו עכשיו</h4>
+                        <span dir="ltr">052-4006777</span>
+                    </div>
                 </a>
+
                 <a href="https://wa.me/9720524006777" target="_blank" rel="noopener noreferrer" class="contact-method">
-                    <div class="cm-icon whatsapp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
-                    <div class="cm-text"><h4>שלחו הודעה בוואטסאפ</h4><span>לחצו כאן</span></div>
+                    <div class="cm-icon whatsapp">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </div>
+                    <div class="cm-text">
+                        <h4>שלחו הודעה בוואטסאפ</h4>
+                        <span>לחצו כאן</span>
+                    </div>
+                </a>
+
+                <!-- כפתור וייז -->
+                <a href="https://waze.com/ul?q=%D7%93%D7%95%D7%93%20%D7%A8%D7%9E%D7%96%204%20%D7%92%D7%93%D7%A8%D7%94"
+                   target="_blank" rel="noopener noreferrer" class="contact-method">
+                    <div class="cm-icon" style="background:#33ccff;">
+                        <!-- אייקון וייז פשוט ב\-SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                            <path fill="#ffffff" d="M19 4a7 7 0 0 0-7-3C7.477 1 4 4.134 4 8c0 1.148.241 2.238.68 3.234-.21.392-.51.732-.85.99A2 2 0 0 0 4 16h1.09a3 3 0 0 0 5.82 0h1.18a3 3 0 0 0 5.82 0H19a3 3 0 0 0 2.862-3.957C21.238 9.594 19 7.138 19 4zM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm5 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                        </svg>
+                    </div>
+                    <div class="cm-text">
+                        <h4>נווטו עם Waze</h4>
+                        <span>דוד רמז 4, גדרה</span>
+                    </div>
                 </a>
             </div>
+
             <div class="bottom-form-box">
                 <h3>השאירו פרטים ונחזור אליכם</h3>
                 <form id="lead-form-bottom" action="https://formsubmit.co/krispelaw@gmail.com" method="POST">
@@ -1489,6 +1661,21 @@
             });
         });
     });
+
+        document.addEventListener('DOMContentLoaded', function () {
+        const track = document.querySelector('.clients-track');
+        if (!track) return;
+
+        track.addEventListener('mouseenter', () => {
+        track.style.animationPlayState = 'paused';
+    });
+
+        track.addEventListener('mouseleave', () => {
+        track.style.animationPlayState = 'running';
+    });
+    });
+
+
 </script>
 </body>
 </html>
