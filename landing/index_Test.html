@@ -7,14 +7,17 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="description" content="בדיקת פוליגרף מקצועית ודיסקרטית בגדרה - לעסקים, חברות ביטוח ולקוחות פרטיים. 20 שנות ניסיון, מעל 250 בדיקות. יוסי קריספל - מנכ״ל לשכת בודקי הפוליגרף בישראל.">
 
-    <!-- Fonts -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+    <!-- Fonts - Same as main site -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ============================================
-           CSS VARIABLES
+           CSS VARIABLES - מותאם לאתר הקיים
         ============================================ */
         :root {
             --primary-blue: #1a2b5f;
@@ -96,7 +99,7 @@
         }
 
         /* ============================================
-           TOP BAR
+           TOP BAR - מותאם לאתר הקיים
         ============================================ */
         .top-bar {
             background: var(--white);
@@ -116,12 +119,9 @@
             gap: 15px;
         }
 
-        /* Placeholder for logo */
-        .logo-placeholder {
-            font-weight: 900;
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            letter-spacing: -1px;
+        .top-bar-logo img {
+            height: 60px;
+            width: auto;
         }
 
         .top-bar-logo-text {
@@ -172,11 +172,11 @@
         }
 
         /* ============================================
-           HERO SECTION
+           HERO SECTION - מותאם לאתר הקיים
         ============================================ */
         .hero {
             position: relative;
-            min-height: 90vh; /* Increased slightly */
+            min-height: 85vh;
             display: flex;
             align-items: center;
             overflow: hidden;
@@ -188,10 +188,9 @@
             content: '';
             position: absolute;
             inset: 0;
-            /* Placeholder background image - replace with your local image */
-            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop') center center/cover no-repeat;
-            opacity: 0.3;
-            filter: brightness(0.8) contrast(1.2) saturate(0); /* Grayscale tech look */
+            background: url('../images/polygraph-device.jpg') left center/contain no-repeat;
+            opacity: 0.4;
+            filter: brightness(1.2) contrast(1.1);
             z-index: 1;
         }
 
@@ -200,9 +199,10 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(to left,
-            var(--bg-dark) 0%,
-            rgba(5, 11, 23, 0.8) 40%,
-            rgba(5, 11, 23, 0.4) 100%);
+                var(--bg-dark) 0%,
+                var(--bg-dark) 35%,
+                rgba(5, 11, 23, 0.6) 60%,
+                transparent 100%);
             z-index: 2;
         }
 
@@ -210,8 +210,8 @@
             position: relative;
             z-index: 10;
             display: grid;
-            grid-template-columns: 1fr 480px; /* Slightly wider for the new form */
-            gap: 60px;
+            grid-template-columns: 1fr 420px;
+            gap: 50px;
             align-items: center;
             max-width: 1300px;
             margin: 0 auto;
@@ -226,16 +226,14 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 212, 255, 0.15);
-            color: var(--accent-cyan);
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            background: var(--accent-cyan);
+            color: var(--primary-blue-dark);
             padding: 10px 22px;
             border-radius: 50px;
             font-weight: 700;
             font-size: 0.95rem;
             margin-bottom: 25px;
-            box-shadow: 0 0 25px rgba(0, 212, 255, 0.2);
-            backdrop-filter: blur(5px);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
         }
 
         .hero-badge svg {
@@ -249,21 +247,19 @@
             line-height: 1.1;
             font-weight: 900;
             letter-spacing: -1.5px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
         .hero-text h1 span {
             display: block;
-            background: -webkit-linear-gradient(#00f2fe, #0072ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+            color: var(--accent-cyan);
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
         }
 
         .hero-subtitle {
             font-size: 1.25rem;
             font-weight: 300;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.75);
             margin-bottom: 35px;
             max-width: 500px;
             line-height: 1.7;
@@ -340,230 +336,90 @@
             background: rgba(255, 255, 255, 0.12);
             border-color: var(--accent-cyan);
             color: var(--accent-cyan);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
         }
 
-        /* ============================================
-           NEW GLASS FORM STYLES (החלפת העיצוב הישן)
-        ============================================ */
-        .hero-form.glass-panel {
-            background: rgba(13, 25, 56, 0.65); /* Dark blue glass */
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 40px 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(0, 212, 255, 0.15);
-            box-shadow:
-                    0 20px 50px rgba(0, 0, 0, 0.4),
-                    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
-            position: relative;
-            overflow: hidden;
-            color: var(--white);
-            max-width: 480px;
-            width: 100%;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Hero Form */
+        .hero-form {
+            background: var(--white);
+            padding: 35px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
         }
 
-        .hero-form.glass-panel:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 212, 255, 0.1);
-        }
-
-        /* Polygraph Animation Line */
-        .polygraph-monitor {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 120px;
-            opacity: 0.15;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .heartbeat {
-            width: 200%;
-            height: 100%;
-            stroke: var(--accent-cyan);
-            stroke-width: 2px;
-            fill: none;
-            position: absolute;
-            top: 20px;
-            left: 0;
-            filter: drop-shadow(0 0 8px var(--accent-cyan));
-            animation: dash 6s linear infinite;
-        }
-
-        @keyframes dash {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Form Content */
         .hero-form h3 {
-            position: relative;
-            z-index: 1;
-            color: var(--white);
-            font-size: 1.6rem;
             text-align: center;
-            margin-bottom: 8px;
-            font-weight: 700;
-            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            margin-bottom: 5px;
+            font-size: 1.4rem;
+            color: var(--primary-blue);
         }
 
         .hero-form .form-subtitle {
-            position: relative;
-            z-index: 1;
-            color: rgba(255, 255, 255, 0.7);
             text-align: center;
-            margin-bottom: 35px;
+            color: var(--gray);
+            margin-bottom: 25px;
             font-size: 0.95rem;
         }
 
-        /* Form Fields - Floating Labels */
         .form-group {
-            position: relative;
-            z-index: 1;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .form-group input,
-        .form-group select {
+        .form-group select,
+        .form-group textarea {
             width: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 16px 20px 16px 50px; /* Space for icon on left (LTR) or right (RTL) - Adjusted for RTL */
-            padding-right: 50px;
-            padding-left: 20px;
-            color: var(--white);
+            padding: 16px 22px;
+            border: 2px solid var(--gray-light);
+            border-radius: var(--radius);
             font-family: 'Heebo', sans-serif;
             font-size: 1rem;
-            transition: all 0.3s ease;
-            height: 56px;
+            transition: var(--transition);
+            background: var(--gray-light);
         }
 
         .form-group input:focus,
-        .form-group select:focus {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent-cyan);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
+            border-color: var(--accent-blue);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
         }
 
-        /* Floating Label Logic */
-        .form-group label {
-            position: absolute;
-            right: 50px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgba(255, 255, 255, 0.6);
-            pointer-events: none;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            background: transparent;
-        }
-
-        .form-group input:focus ~ label,
-        .form-group input:not(:placeholder-shown) ~ label {
-            top: 0;
-            right: 20px;
-            transform: translateY(-50%);
-            font-size: 0.8rem;
-            color: var(--accent-cyan);
-            background: rgba(13, 25, 56, 0.9);
-            padding: 0 6px;
-            border-radius: 4px;
-        }
-
-        /* Input Icons */
-        .input-icon {
-            position: absolute;
-            top: 50%;
-            right: 18px;
-            transform: translateY(-50%);
-            color: rgba(255, 255, 255, 0.4);
-            pointer-events: none;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .form-group input:focus ~ .input-icon {
-            color: var(--accent-cyan);
-            filter: drop-shadow(0 0 5px var(--accent-cyan));
-        }
-
-        /* Select Styling */
-        .select-wrapper {
-            position: relative;
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
         }
 
         .form-group select {
-            appearance: none;
             cursor: pointer;
-            color: var(--white);
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236c757d' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 15px center;
         }
 
-        .form-group select option {
-            background-color: var(--primary-blue-dark);
-            color: var(--white);
-        }
-
-        .select-arrow {
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-            color: rgba(255, 255, 255, 0.5);
-            pointer-events: none;
-        }
-
-        /* Glowing Submit Button */
-        .btn-submit.glow-effect {
+        .btn-submit {
             width: 100%;
             padding: 18px;
-            margin-top: 10px;
-            background: linear-gradient(90deg, #00f2fe, #0072ff);
+            background: var(--accent-cyan);
+            color: var(--primary-blue-dark);
             border: none;
-            border-radius: 12px;
-            position: relative;
-            overflow: hidden;
-            color: var(--white);
+            border-radius: var(--radius);
             font-family: 'Heebo', sans-serif;
             font-size: 1.2rem;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            box-shadow: 0 0 25px rgba(0, 114, 255, 0.4);
-            z-index: 1;
+            gap: 10px;
         }
 
-        .btn-submit.glow-effect::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: 0.5s;
-            z-index: -1;
-        }
-
-        .btn-submit.glow-effect:hover::before {
-            left: 100%;
-        }
-
-        .btn-submit.glow-effect:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
         }
 
         .btn-submit svg {
@@ -571,30 +427,26 @@
             height: 20px;
         }
 
-        /* Privacy Text */
         .form-privacy {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            margin-top: 20px;
+            margin-top: 15px;
             font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
-            position: relative;
-            z-index: 1;
+            color: var(--gray);
         }
 
         .form-privacy svg {
+            width: 16px;
+            height: 16px;
             color: var(--accent-cyan);
-            width: 14px;
-            height: 14px;
         }
 
-        /* Form Success Message for JS */
+        /* Form Success Message */
         .form-success {
             text-align: center;
             padding: 40px 20px;
-            color: var(--white);
         }
 
         .form-success svg {
@@ -602,11 +454,19 @@
             height: 60px;
             color: var(--accent-cyan);
             margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+        }
+
+        .form-success h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .form-success p {
+            color: var(--gray);
         }
 
         /* ============================================
-           TRUST BAR
+           TRUST BAR - מותאם לאתר הקיים
         ============================================ */
         .trust-bar {
             background: var(--gray-light);
@@ -663,7 +523,7 @@
         }
 
         /* ============================================
-           EXPERT SECTION
+           EXPERT SECTION - מותאם לאתר הקיים
         ============================================ */
         .expert {
             padding: 100px 5%;
@@ -687,7 +547,6 @@
             width: 100%;
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-lg);
-            background-color: #eee; /* Placeholder bg */
         }
 
         .expert-badge {
@@ -772,7 +631,7 @@
         }
 
         /* ============================================
-           SERVICES SECTION
+           SERVICES SECTION - מותאם לאתר הקיים
         ============================================ */
         .services {
             padding: 100px 5%;
@@ -1010,7 +869,7 @@
         }
 
         /* ============================================
-           PROCESS SECTION
+           PROCESS SECTION - מותאם לאתר הקיים
         ============================================ */
         .process {
             padding: 100px 5%;
@@ -1023,8 +882,8 @@
             position: absolute;
             inset: 0;
             background:
-                    radial-gradient(circle at 0% 100%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
-                    radial-gradient(circle at 100% 0%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 0% 100%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 100% 0%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
         }
 
         .process .section-header {
@@ -1105,7 +964,7 @@
 
 
         /* ============================================
-           FAQ SECTION
+           FAQ SECTION - מותאם לאתר הקיים
         ============================================ */
         .faq {
             padding: 100px 5%;
@@ -1196,7 +1055,7 @@
 
 
         /* ============================================
-           BOTTOM CTA SECTION
+           BOTTOM CTA SECTION - מותאם לאתר הקיים
         ============================================ */
         .bottom-cta {
             padding: 100px 5%;
@@ -1209,8 +1068,8 @@
             position: absolute;
             inset: 0;
             background:
-                    radial-gradient(circle at 0% 100%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
-                    radial-gradient(circle at 100% 0%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 0% 100%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 100% 0%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
         }
 
         .bottom-cta-content {
@@ -1316,27 +1175,8 @@
             color: var(--primary-blue);
         }
 
-        /* Regular inputs for bottom form */
-        .bottom-cta-form .form-group input,
-        .bottom-cta-form .form-group select {
-            background: var(--gray-light);
-            border-color: var(--gray-light);
-            color: var(--text-dark);
-        }
-
-        .bottom-cta-form .form-group input:focus,
-        .bottom-cta-form .form-group select:focus {
-            background: var(--white);
-            border-color: var(--accent-blue);
-        }
-
-        .bottom-cta-form .form-group select option {
-            background-color: var(--white);
-            color: var(--text-dark);
-        }
-
         /* ============================================
-           FOOTER
+           FOOTER - מותאם לאתר הקיים
         ============================================ */
         .footer {
             background: var(--primary-blue-dark);
@@ -1359,7 +1199,7 @@
         }
 
         /* ============================================
-           WHATSAPP FLOATING BUTTON
+           WHATSAPP FLOATING BUTTON - מותאם לאתר הקיים
         ============================================ */
         .whatsapp-float {
             position: fixed;
@@ -1442,7 +1282,7 @@
         }
 
         /* ============================================
-           SCROLL ANIMATIONS
+           SCROLL ANIMATIONS - מותאם לאתר הקיים
         ============================================ */
         .animate-on-scroll {
             opacity: 0;
@@ -1479,7 +1319,8 @@
                 justify-content: center;
             }
 
-            .hero-form.glass-panel {
+            .hero-form {
+                max-width: 450px;
                 margin: 0 auto;
             }
 
@@ -1547,13 +1388,20 @@
                 padding: 50px 5% 60px;
             }
 
+            .hero::after {
+                background: linear-gradient(to bottom,
+                    rgba(5, 11, 23, 0.75) 0%,
+                    rgba(5, 11, 23, 0.5) 40%,
+                    rgba(5, 11, 23, 0.7) 100%);
+            }
+
             .hero-badge {
                 font-size: 0.85rem;
                 padding: 8px 18px;
             }
 
-            .hero-form.glass-panel {
-                padding: 30px 20px;
+            .hero-form {
+                padding: 25px 20px;
             }
 
             .trust-items {
@@ -1652,443 +1500,64 @@
     </style>
 </head>
 <body>
-<!-- Top Bar -->
-<div class="top-bar">
-    <a href="#" class="top-bar-logo">
-        <!-- Using placeholder for logo since local file unavailable -->
-        <div class="logo-placeholder">תבל פוליגרף</div>
-        <div class="top-bar-logo-text">
-            <span class="company-name">תבל - שרותי פוליגרף מתקדמים</span>
-            <span class="phone-text">צרו איתנו קשר: 052-4006777</span>
-        </div>
-    </a>
-    <div class="top-bar-cta">
-        <a href="tel:052-4006777" class="btn-call">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-            <span>052-4006777</span>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="#" class="top-bar-logo">
+            <img src="../images/logo.png" alt="תבל - שירותי פוליגרף מתקדמים">
+            <div class="top-bar-logo-text">
+                <span class="company-name">תבל - שרותי פוליגרף מתקדמים</span>
+                <span class="phone-text">צרו איתנו קשר: 052-4006777</span>
+            </div>
         </a>
-    </div>
-</div>
-
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <div class="hero-text">
-            <div class="hero-badge">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        <div class="top-bar-cta">
+            <a href="tel:052-4006777" class="btn-call">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                 </svg>
-                20 שנות ניסיון | מעל 250 בדיקות מקצועיות
-            </div>
-            <h1>בדיקת פוליגרף מקצועית ודיסקרטית <span>בגדרה</span></h1>
-            <p class="hero-subtitle">לעסקים, חברות ביטוח ולקוחות פרטיים<br>בהובלת יוסי קריספל – מנכ"ל לשכת בודקי הפוליגרף בישראל</p>
-            <div class="hero-cta-buttons">
-                <a href="tel:052-4006777" class="btn-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                    </svg>
-                    קביעת שיחה דיסקרטית
-                </a>
-                <a href="#contact-form" class="btn-secondary">
+                <span>052-4006777</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                     </svg>
-                    השאירו פרטים
-                </a>
-            </div>
-        </div>
-
-        <!-- NEW GLASS FORM -->
-        <div class="hero-form glass-panel" id="contact-form">
-            <!-- Polygraph Animation Line -->
-            <div class="polygraph-monitor">
-                <svg class="heartbeat" viewBox="0 0 200 50" preserveAspectRatio="none">
-                    <path d="M0,25 L20,25 L30,10 L40,40 L50,25 L60,25 L70,5 L80,45 L90,25 L200,25" vector-effect="non-scaling-stroke"/>
-                </svg>
-            </div>
-
-            <h3>בדיקת התאמה ראשונית</h3>
-            <p class="form-subtitle">השאירו פרטים לשיחה דיסקרטית ומקצועית</p>
-
-            <form id="lead-form-hero" action="https://formsubmit.co/office@tevel-polygraph.co.il" method="POST">
-                <input type="hidden" name="_subject" value="ליד חדש מדף נחיתה - תבל פוליגרף">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="text" name="_honey" style="display:none">
-
-                <div class="form-group floating-label">
-                    <input type="text" name="name" id="name" placeholder=" " required>
-                    <label for="name">שם מלא</label>
-                    <div class="input-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    </div>
+                    20 שנות ניסיון | מעל 250 בדיקות מקצועיות
                 </div>
-
-                <div class="form-group floating-label">
-                    <input type="tel" name="phone" id="phone" placeholder=" " dir="ltr" required>
-                    <label for="phone">טלפון נייד</label>
-                    <div class="input-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="select-wrapper">
-                        <select name="service" required>
-                            <option value="" disabled selected>נושא הבדיקה</option>
-                            <option value="עסקים וארגונים">עסקים וארגונים</option>
-                            <option value="תחום הביטוח">תחום הביטוח</option>
-                            <option value="לקוחות פרטיים">לקוחות פרטיים</option>
-                            <option value="הקשר משפטי">הקשר משפטי</option>
-                            <option value="אחר">אחר</option>
-                        </select>
-                        <div class="select-arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                        </div>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn-submit glow-effect">
-                    <span>קבלת ייעוץ ראשוני</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </button>
-
-                <div class="form-privacy">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    100% דיסקרטיות מובטחת
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
-
-<!-- Trust Bar -->
-<section class="trust-bar">
-    <div class="trust-items">
-        <div class="trust-item animate-on-scroll">
-            <div class="trust-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                    <polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
-            </div>
-            <span>בודק מוסמך ובעל הסמכה ביטחונית</span>
-        </div>
-        <div class="trust-item animate-on-scroll">
-            <div class="trust-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-            </div>
-            <span>מנכ"ל לשכת בודקי הפוליגרף בישראל</span>
-        </div>
-        <div class="trust-item animate-on-scroll">
-            <div class="trust-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                </svg>
-            </div>
-            <span>בדיקות בהסכמה מלאה ועל פי חוק</span>
-        </div>
-        <div class="trust-item animate-on-scroll">
-            <div class="trust-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                    <circle cx="12" cy="10" r="3"/>
-                </svg>
-            </div>
-            <span>מיקום נוח בגדרה – שירות בפריסה ארצית</span>
-        </div>
-    </div>
-</section>
-
-<!-- Expert Section -->
-<section class="expert">
-    <div class="expert-content">
-        <div class="expert-image animate-on-scroll">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop" alt="יוסי קריספל - מנכ״ל לשכת בודקי הפוליגרף בישראל">
-            <div class="expert-badge">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                    <polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
-                בודק מוסמך
-            </div>
-        </div>
-        <div class="expert-info animate-on-scroll">
-            <div class="expert-label">מי עומד מאחורי המכון?</div>
-            <h2>יוסי קריספל</h2>
-            <p class="expert-title">בעלים ומייסד המכון | מנכ"ל לשכת בודקי הפוליגרף בישראל</p>
-            <p class="expert-text">
-                בעל הסמכה ביטחונית וניסיון רב שנים בניהול מערכות ביטחוניות בארץ ובחו"ל.
-                בעל ידע מקצועי בתחום התשאול, החקירות והבדיקות המורכבות.
-            </p>
-            <div class="expert-credentials">
-                <div class="credential">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-                    </svg>
-                    <span>20 שנות ניסיון בתחום</span>
-                </div>
-                <div class="credential">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                    </svg>
-                    <span>עבודה מול עסקים וחברות ביטוח</span>
-                </div>
-                <div class="credential">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="2" y1="12" x2="22" y2="12"/>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                    </svg>
-                    <span>התאמת בדיקה מדויקת לכל מקרה</span>
-                </div>
-                <div class="credential">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                        <circle cx="9" cy="7" r="4"/>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                    </svg>
-                    <span>ליווי אישי מתחילת התהליך ועד סופו</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Services Grid - 4 Areas -->
-<section class="services">
-    <div class="section-header">
-        <h2>תחומי הבדיקה</h2>
-        <p>בכל אחד מהתחומים הבדיקה מתבצעת בדיסקרטיות מלאה ובהסכמה</p>
-    </div>
-    <div class="services-grid services-grid-4">
-        <div class="service-card animate-on-scroll">
-            <div class="service-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                    <circle cx="9" cy="7" r="4"/>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                </svg>
-            </div>
-            <h3> עסקים וארגונים</h3>
-            <ul class="service-list">
-                <li>חשד למעילה או גניבה</li>
-                <li>דליפת מידע</li>
-                <li>בירור אירועים חריגים</li>
-                <li>בדיקות טרום העסקה</li>
-            </ul>
-        </div>
-        <div class="service-card animate-on-scroll">
-            <div class="service-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                    <path d="M9 12l2 2 4-4"/>
-                </svg>
-            </div>
-            <h3> תחום הביטוח</h3>
-            <ul class="service-list">
-                <li>בירור תביעות ביטוח</li>
-                <li>אימות גרסה באירועי נזק</li>
-                <li>בדיקות בהסכמת מבוטחים</li>
-                <li>מקרים של חשד להונאה</li>
-            </ul>
-        </div>
-        <div class="service-card animate-on-scroll">
-            <div class="service-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
-                </svg>
-            </div>
-            <h3> לקוחות פרטיים</h3>
-            <ul class="service-list">
-                <li>סכסוכים אישיים</li>
-                <li>אימות טענות בין צדדים</li>
-                <li>בירור אירועים במחלוקת</li>
-                <li>בדיקות בהסכמה</li>
-            </ul>
-        </div>
-        <div class="service-card animate-on-scroll">
-            <div class="service-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                    <line x1="16" y1="13" x2="8" y2="13"/>
-                    <line x1="16" y1="17" x2="8" y2="17"/>
-                </svg>
-            </div>
-            <h3> הקשר משפטי</h3>
-            <ul class="service-list">
-                <li>הערכת מהימנות לפני הליך</li>
-                <li>ייעוץ מקדים לעו"ד</li>
-                <li>בדיקות בהסכמה בין צדדים</li>
-                <li>חוות דעת מקצועית</li>
-            </ul>
-        </div>
-    </div>
-    <div class="cta-after-grid animate-on-scroll">
-        <p>אם אתם מתמודדים עם אחד מהמצבים הללו – פנו לשיחה דיסקרטית</p>
-        <a href="#contact-form" class="btn-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-            השאירו פרטים
-        </a>
-    </div>
-</section>
-
-<!-- Why Act Professionally Section -->
-<section class="why-professional">
-    <div class="section-header">
-        <h2>למה חשוב לפעול בצורה מקצועית?</h2>
-        <p>כאשר קיימת מחלוקת או חשד – חוסר הוודאות עצמו עלול לגרום לנזק</p>
-    </div>
-    <div class="why-content">
-        <div class="why-text animate-on-scroll">
-            <p>החלטה ללא בירור מקצועי עלולה להוביל:</p>
-            <ul class="why-list">
-                <li>לפגיעה כלכלית</li>
-                <li>להחרפת סכסוך</li>
-                <li>להשלכות משפטיות</li>
-                <li>לפגיעה במוניטין</li>
-                <li>לפגיעה אישית מתמשכת</li>
-            </ul>
-            <p class="highlight-text">בדיקת פוליגרף מקצועית מספקת תמונת מצב מבוססת במקום הסתמכות על השערות.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Process Section -->
-<section class="process">
-    <div class="section-header">
-        <h2>איך מתבצעת הבדיקה?</h2>
-        <p>התהליך כולו מתבצע באווירה רגועה, בהסכמה מלאה ובדיסקרטיות מוחלטת</p>
-    </div>
-    <div class="process-steps process-steps-5">
-        <div class="process-step animate-on-scroll">
-            <div class="step-number">1</div>
-            <h3>שיחת התאמה ראשונית</h3>
-            <p>הבנת המקרה והתאמת הבדיקה לצרכים שלכם</p>
-        </div>
-        <div class="process-step animate-on-scroll">
-            <div class="step-number">2</div>
-            <h3>בניית שאלות מדויקות</h3>
-            <p>הכנת שאלות ממוקדות ומותאמות מראש</p>
-        </div>
-        <div class="process-step animate-on-scroll">
-            <div class="step-number">3</div>
-            <h3>ביצוע הבדיקה</h3>
-            <p>בדיקה בתנאים מבוקרים ומקצועיים</p>
-        </div>
-        <div class="process-step animate-on-scroll">
-            <div class="step-number">4</div>
-            <h3>ניתוח מקצועי</h3>
-            <p>עיבוד וניתוח התוצאות באופן מדויק</p>
-        </div>
-        <div class="process-step animate-on-scroll">
-            <div class="step-number">5</div>
-            <h3>מסירת ממצאים</h3>
-            <p>דו"ח מסודר וברור עם כל הממצאים</p>
-        </div>
-    </div>
-</section>
-
-
-<!-- FAQ Section -->
-<section class="faq">
-    <div class="section-header">
-        <h2>שאלות נפוצות</h2>
-    </div>
-    <div class="faq-container">
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>האם הבדיקה חוקית?</span>
-                <div class="faq-icon">+</div>
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    כן. הבדיקה מתבצעת רק בהסכמה מלאה של הנבדק, בהתאם לחוק ולכל ההנחיות המקצועיות.
-                </div>
-            </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>כמה זמן נמשכת הבדיקה?</span>
-                <div class="faq-icon">+</div>
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    בין שעה לשעתיים בהתאם למקרה. הזמן כולל שיחת הכנה, הסבר על התהליך, סקירת השאלות, ביצוע הבדיקה וסיכום קצר.
-                </div>
-            </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>האם נשמרת דיסקרטיות?</span>
-                <div class="faq-icon">+</div>
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    בהחלט. כל פנייה נשמרת בסודיות מלאה. הדו"ח נמסר אך ורק למזמין הבדיקה, ואיננו משתפים מידע עם צד שלישי ללא אישור מפורש בכתב.
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Bottom CTA Section -->
-<section class="bottom-cta">
-    <div class="bottom-cta-content">
-        <div class="section-header">
-            <h2>אם יש ספק – עדיף לברר.</h2>
-            <p>השאירו פרטים לשיחה ראשונית ודיסקרטית ללא התחייבות</p>
-        </div>
-        <div class="bottom-cta-grid">
-            <div class="contact-methods">
-                <a href="tel:052-4006777" class="contact-method">
-                    <div class="contact-method-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <h1>בדיקת פוליגרף מקצועית ודיסקרטית <span>בגדרה</span></h1>
+                <p class="hero-subtitle">לעסקים, חברות ביטוח ולקוחות פרטיים<br>בהובלת יוסי קריספל – מנכ"ל לשכת בודקי הפוליגרף בישראל</p>
+                <div class="hero-cta-buttons">
+                    <a href="tel:052-4006777" class="btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                         </svg>
-                    </div>
-                    <div class="contact-method-text">
-                        <h4>התקשרו עכשיו</h4>
-                        <span dir="ltr">052-4006777</span>
-                    </div>
-                </a>
-                <a href="https://wa.me/9720524006777" target="_blank" rel="noopener noreferrer" class="contact-method">
-                    <div class="contact-method-icon whatsapp">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        קביעת שיחה דיסקרטית
+                    </a>
+                    <a href="#contact-form" class="btn-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                         </svg>
-                    </div>
-                    <div class="contact-method-text">
-                        <h4>וואטסאפ</h4>
-                        <span>שלחו הודעה</span>
-                    </div>
-                </a>
+                        השאירו פרטים
+                    </a>
+                </div>
             </div>
-            <div class="bottom-cta-form">
-                <h3>השאירו פרטים</h3>
-                <form id="lead-form-bottom" action="https://formsubmit.co/office@tevel-polygraph.co.il" method="POST">
-                    <input type="hidden" name="_subject" value="ליד חדש מדף נחיתה (תחתון) - תבל פוליגרף">
+
+            <div class="hero-form" id="contact-form">
+                <h3>השאירו פרטים לשיחה דיסקרטית</h3>
+                <p class="form-subtitle">נחזור אליכם בהקדם</p>
+                <form id="lead-form-hero" action="https://formsubmit.co/office@tevel-polygraph.co.il" method="POST">
+                    <input type="hidden" name="_subject" value="ליד חדש מדף נחיתה - תבל פוליגרף">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
                     <input type="text" name="_honey" style="display:none">
 
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="שם *" required>
+                        <input type="text" name="name" placeholder="שם מלא *" required>
                     </div>
                     <div class="form-group">
                         <input type="tel" name="phone" placeholder="טלפון *" dir="ltr" required>
@@ -2108,7 +1577,7 @@
                             <line x1="22" y1="2" x2="11" y2="13"/>
                             <polygon points="22 2 15 22 11 13 2 9 22 2"/>
                         </svg>
-                        חזרו אליי בהקדם
+                        שליחה
                     </button>
                     <div class="form-privacy">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2120,131 +1589,484 @@
                 </form>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Footer -->
-<footer class="footer">
-    <p>© 2026 תבל - שירותי פוליגרף מתקדמים. כל הזכויות שמורות.
-        <a href="../privacy.html">מדיניות פרטיות</a>
-        <a href="../accessibility.html">הצהרת נגישות</a>
-    </p>
-</footer>
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="trust-items">
+            <div class="trust-item animate-on-scroll">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <span>בודק מוסמך ובעל הסמכה ביטחונית</span>
+            </div>
+            <div class="trust-item animate-on-scroll">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <span>מנכ"ל לשכת בודקי הפוליגרף בישראל</span>
+            </div>
+            <div class="trust-item animate-on-scroll">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                </div>
+                <span>בדיקות בהסכמה מלאה ועל פי חוק</span>
+            </div>
+            <div class="trust-item animate-on-scroll">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </div>
+                <span>מיקום נוח בגדרה – שירות בפריסה ארצית</span>
+            </div>
+        </div>
+    </section>
 
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/9720524006777" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="שלח הודעה בוואטסאפ">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-</a>
+    <!-- Expert Section -->
+    <section class="expert">
+        <div class="expert-content">
+            <div class="expert-image animate-on-scroll">
+                <img src="../images/profile picture.jpg" alt="יוסי קריספל - מנכ״ל לשכת בודקי הפוליגרף בישראל">
+                <div class="expert-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    בודק מוסמך
+                </div>
+            </div>
+            <div class="expert-info animate-on-scroll">
+                <div class="expert-label">מי עומד מאחורי המכון?</div>
+                <h2>יוסי קריספל</h2>
+                <p class="expert-title">בעלים ומייסד המכון | מנכ"ל לשכת בודקי הפוליגרף בישראל</p>
+                <p class="expert-text">
+                    בעל הסמכה ביטחונית וניסיון רב שנים בניהול מערכות ביטחוניות בארץ ובחו"ל.
+                    בעל ידע מקצועי בתחום התשאול, החקירות והבדיקות המורכבות.
+                </p>
+                <div class="expert-credentials">
+                    <div class="credential">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                        <span>20 שנות ניסיון בתחום</span>
+                    </div>
+                    <div class="credential">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <span>עבודה מול עסקים וחברות ביטוח</span>
+                    </div>
+                    <div class="credential">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <span>התאמת בדיקה מדויקת לכל מקרה</span>
+                    </div>
+                    <div class="credential">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        <span>ליווי אישי מתחילת התהליך ועד סופו</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Mobile Sticky CTA -->
-<div class="mobile-sticky-cta">
-    <a href="tel:052-4006777" class="btn-mobile-call">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-        </svg>
-        חייגו עכשיו
-    </a>
-    <a href="https://wa.me/9720524006777" target="_blank" rel="noopener noreferrer" class="btn-mobile-whatsapp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <!-- Services Grid - 4 Areas -->
+    <section class="services">
+        <div class="section-header">
+            <h2>תחומי הבדיקה</h2>
+            <p>בכל אחד מהתחומים הבדיקה מתבצעת בדיסקרטיות מלאה ובהסכמה</p>
+        </div>
+        <div class="services-grid services-grid-4">
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h3> עסקים וארגונים</h3>
+                <ul class="service-list">
+                    <li>חשד למעילה או גניבה</li>
+                    <li>דליפת מידע</li>
+                    <li>בירור אירועים חריגים</li>
+                    <li>בדיקות טרום העסקה</li>
+                </ul>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                </div>
+                <h3> תחום הביטוח</h3>
+                <ul class="service-list">
+                    <li>בירור תביעות ביטוח</li>
+                    <li>אימות גרסה באירועי נזק</li>
+                    <li>בדיקות בהסכמת מבוטחים</li>
+                    <li>מקרים של חשד להונאה</li>
+                </ul>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </div>
+                <h3> לקוחות פרטיים</h3>
+                <ul class="service-list">
+                    <li>סכסוכים אישיים</li>
+                    <li>אימות טענות בין צדדים</li>
+                    <li>בירור אירועים במחלוקת</li>
+                    <li>בדיקות בהסכמה</li>
+                </ul>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                    </svg>
+                </div>
+                <h3> הקשר משפטי</h3>
+                <ul class="service-list">
+                    <li>הערכת מהימנות לפני הליך</li>
+                    <li>ייעוץ מקדים לעו"ד</li>
+                    <li>בדיקות בהסכמה בין צדדים</li>
+                    <li>חוות דעת מקצועית</li>
+                </ul>
+            </div>
+        </div>
+        <div class="cta-after-grid animate-on-scroll">
+            <p>אם אתם מתמודדים עם אחד מהמצבים הללו – פנו לשיחה דיסקרטית</p>
+            <a href="#contact-form" class="btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                השאירו פרטים
+            </a>
+        </div>
+    </section>
+
+    <!-- Why Act Professionally Section -->
+    <section class="why-professional">
+        <div class="section-header">
+            <h2>למה חשוב לפעול בצורה מקצועית?</h2>
+            <p>כאשר קיימת מחלוקת או חשד – חוסר הוודאות עצמו עלול לגרום לנזק</p>
+        </div>
+        <div class="why-content">
+            <div class="why-text animate-on-scroll">
+                <p>החלטה ללא בירור מקצועי עלולה להוביל:</p>
+                <ul class="why-list">
+                    <li>לפגיעה כלכלית</li>
+                    <li>להחרפת סכסוך</li>
+                    <li>להשלכות משפטיות</li>
+                    <li>לפגיעה במוניטין</li>
+                    <li>לפגיעה אישית מתמשכת</li>
+                </ul>
+                <p class="highlight-text">בדיקת פוליגרף מקצועית מספקת תמונת מצב מבוססת במקום הסתמכות על השערות.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="section-header">
+            <h2>איך מתבצעת הבדיקה?</h2>
+            <p>התהליך כולו מתבצע באווירה רגועה, בהסכמה מלאה ובדיסקרטיות מוחלטת</p>
+        </div>
+        <div class="process-steps process-steps-5">
+            <div class="process-step animate-on-scroll">
+                <div class="step-number">1</div>
+                <h3>שיחת התאמה ראשונית</h3>
+                <p>הבנת המקרה והתאמת הבדיקה לצרכים שלכם</p>
+            </div>
+            <div class="process-step animate-on-scroll">
+                <div class="step-number">2</div>
+                <h3>בניית שאלות מדויקות</h3>
+                <p>הכנת שאלות ממוקדות ומותאמות מראש</p>
+            </div>
+            <div class="process-step animate-on-scroll">
+                <div class="step-number">3</div>
+                <h3>ביצוע הבדיקה</h3>
+                <p>בדיקה בתנאים מבוקרים ומקצועיים</p>
+            </div>
+            <div class="process-step animate-on-scroll">
+                <div class="step-number">4</div>
+                <h3>ניתוח מקצועי</h3>
+                <p>עיבוד וניתוח התוצאות באופן מדויק</p>
+            </div>
+            <div class="process-step animate-on-scroll">
+                <div class="step-number">5</div>
+                <h3>מסירת ממצאים</h3>
+                <p>דו"ח מסודר וברור עם כל הממצאים</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="section-header">
+            <h2>שאלות נפוצות</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>האם הבדיקה חוקית?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        כן. הבדיקה מתבצעת רק בהסכמה מלאה של הנבדק, בהתאם לחוק ולכל ההנחיות המקצועיות.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>כמה זמן נמשכת הבדיקה?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        בין שעה לשעתיים בהתאם למקרה. הזמן כולל שיחת הכנה, הסבר על התהליך, סקירת השאלות, ביצוע הבדיקה וסיכום קצר.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>האם נשמרת דיסקרטיות?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        בהחלט. כל פנייה נשמרת בסודיות מלאה. הדו"ח נמסר אך ורק למזמין הבדיקה, ואיננו משתפים מידע עם צד שלישי ללא אישור מפורש בכתב.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Bottom CTA Section -->
+    <section class="bottom-cta">
+        <div class="bottom-cta-content">
+            <div class="section-header">
+                <h2>אם יש ספק – עדיף לברר.</h2>
+                <p>השאירו פרטים לשיחה ראשונית ודיסקרטית ללא התחייבות</p>
+            </div>
+            <div class="bottom-cta-grid">
+                <div class="contact-methods">
+                    <a href="tel:052-4006777" class="contact-method">
+                        <div class="contact-method-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-method-text">
+                            <h4>התקשרו עכשיו</h4>
+                            <span dir="ltr">052-4006777</span>
+                        </div>
+                    </a>
+                    <a href="https://wa.me/9720524006777" target="_blank" rel="noopener noreferrer" class="contact-method">
+                        <div class="contact-method-icon whatsapp">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-method-text">
+                            <h4>וואטסאפ</h4>
+                            <span>שלחו הודעה</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="bottom-cta-form">
+                    <h3>השאירו פרטים</h3>
+                    <form id="lead-form-bottom" action="https://formsubmit.co/office@tevel-polygraph.co.il" method="POST">
+                        <input type="hidden" name="_subject" value="ליד חדש מדף נחיתה (תחתון) - תבל פוליגרף">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" style="display:none">
+
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="שם *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="טלפון *" dir="ltr" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="service" required>
+                                <option value="" disabled selected>סוג פנייה *</option>
+                                <option value="עסקים וארגונים">עסקים וארגונים</option>
+                                <option value="תחום הביטוח">תחום הביטוח</option>
+                                <option value="לקוחות פרטיים">לקוחות פרטיים</option>
+                                <option value="הקשר משפטי">הקשר משפטי</option>
+                                <option value="אחר">אחר</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                            חזרו אליי בהקדם
+                        </button>
+                        <div class="form-privacy">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            המידע שלכם מוגן בדיסקרטיות מוחלטת
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 תבל - שירותי פוליגרף מתקדמים. כל הזכויות שמורות.
+            <a href="../privacy.html">מדיניות פרטיות</a>
+            <a href="../accessibility.html">הצהרת נגישות</a>
+        </p>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/9720524006777" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="שלח הודעה בוואטסאפ">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
-        וואטסאפ
     </a>
-</div>
 
-<!-- JavaScript -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // ============================================
-        // FAQ Accordion
-        // ============================================
-        const faqItems = document.querySelectorAll('.faq-item');
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta">
+        <a href="tel:052-4006777" class="btn-mobile-call">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            חייגו עכשיו
+        </a>
+        <a href="https://wa.me/9720524006777" target="_blank" rel="noopener noreferrer" class="btn-mobile-whatsapp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            וואטסאפ
+        </a>
+    </div>
 
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            if (!question) return;
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ============================================
+            // FAQ Accordion
+            // ============================================
+            const faqItems = document.querySelectorAll('.faq-item');
 
-            question.addEventListener('click', () => {
-                faqItems.forEach(other => {
-                    if (other !== item) other.classList.remove('active');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                if (!question) return;
+
+                question.addEventListener('click', () => {
+                    faqItems.forEach(other => {
+                        if (other !== item) other.classList.remove('active');
+                    });
+                    item.classList.toggle('active');
                 });
-                item.classList.toggle('active');
             });
-        });
 
-        // ============================================
-        // Scroll Animations
-        // ============================================
-        const animateElements = document.querySelectorAll('.animate-on-scroll');
+            // ============================================
+            // Scroll Animations
+            // ============================================
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
 
-        if (animateElements.length) {
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
+            if (animateElements.length) {
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                animateElements.forEach(el => observer.observe(el));
+            }
+
+            // ============================================
+            // Smooth Scroll for Anchor Links
+            // ============================================
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', e => {
+                    const targetId = anchor.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const target = document.querySelector(targetId);
+                    if (!target) return;
+
+                    e.preventDefault();
+                    const topBar = document.querySelector('.top-bar');
+                    const offset = target.offsetTop - (topBar ? topBar.offsetHeight : 0);
+                    window.scrollTo({ top: offset, behavior: 'smooth' });
                 });
-            }, { threshold: 0.1 });
-
-            animateElements.forEach(el => observer.observe(el));
-        }
-
-        // ============================================
-        // Smooth Scroll for Anchor Links
-        // ============================================
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', e => {
-                const targetId = anchor.getAttribute('href');
-                if (targetId === '#') return;
-
-                const target = document.querySelector(targetId);
-                if (!target) return;
-
-                e.preventDefault();
-                const topBar = document.querySelector('.top-bar');
-                const offset = target.offsetTop - (topBar ? topBar.offsetHeight : 0);
-                window.scrollTo({ top: offset, behavior: 'smooth' });
             });
-        });
 
-        // ============================================
-        // Form Submission with Fetch API (Handles BOTH forms)
-        // ============================================
-        const forms = document.querySelectorAll('form');
+            // ============================================
+            // Form Submission with Fetch API
+            // ============================================
+            const forms = document.querySelectorAll('form');
 
-        forms.forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
 
-                const formData = new FormData(form);
-                const submitBtn = form.querySelector('.btn-submit');
-                const originalText = submitBtn.innerHTML;
+                    const formData = new FormData(form);
+                    const submitBtn = form.querySelector('.btn-submit');
+                    const originalText = submitBtn.innerHTML;
 
-                // Loading state
-                submitBtn.innerHTML = `
+                    // Loading state
+                    submitBtn.innerHTML = `
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;">
                             <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
                         </svg>
                         שולח...
                     `;
-                submitBtn.disabled = true;
+                    submitBtn.disabled = true;
 
-                fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                })
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
                     .then(response => {
                         if (response.ok) {
-                            // Success - show message inside the form container
-                            // If it's the glass form, we keep text white/cyan. If regular, dark.
-                            const isGlassForm = form.closest('.glass-panel');
-
+                            // Success - show message
                             form.innerHTML = `
                                 <div class="form-success">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2255,13 +2077,6 @@
                                     <p>קיבלנו את פנייתך ונחזור אליך בהקדם האפשרי.</p>
                                 </div>
                             `;
-
-                            // Adjust text color for success message if not in glass panel
-                            if (!isGlassForm && form.querySelector('.form-success')) {
-                                form.querySelector('.form-success h3').style.color = 'var(--primary-blue)';
-                                form.querySelector('.form-success p').style.color = 'var(--gray)';
-                            }
-
                         } else {
                             throw new Error('Form submission failed');
                         }
@@ -2272,19 +2087,21 @@
                         submitBtn.disabled = false;
                         alert('אירעה שגיאה. אנא נסו שוב או התקשרו אלינו.');
                     });
+                });
             });
-        });
 
-        // Add spin animation for loading
-        const style = document.createElement('style');
-        style.textContent = `
+            // Add spin animation for loading
+            const style = document.createElement('style');
+            style.textContent = `
                 @keyframes spin {
                     from { transform: rotate(0deg); }
                     to { transform: rotate(360deg); }
                 }
             `;
-        document.head.appendChild(style);
-    });
-</script>
+            document.head.appendChild(style);
+
+            console.log('תבל - דף נחיתה נטען בהצלחה');
+        });
+    </script>
 </body>
 </html>
