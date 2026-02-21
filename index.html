@@ -698,11 +698,11 @@
                 </div>
                 
                 <div class="form-group">
-                    <input type="tel" name="phone" placeholder="טלפון" dir="ltr">
+                    <input type="tel" name="phone" placeholder="טלפון" dir="rtl">
                 </div>
                 
                 <div class="form-group">
-                    <input type="email" name="email" placeholder='דוא"ל*' required dir="ltr">
+                    <input type="email" name="email" placeholder='דוא"ל*' required dir="rtl">
                 </div>
                 
                 <div class="form-group">
@@ -720,10 +720,12 @@
                 <div class="form-group">
                     <textarea name="message" placeholder="הודעה (אופציונלי)"></textarea>
                 </div>
-                
-                <div class="checkbox-group">
-                    <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked>
-                    <label for="newsletter">אני מאשר/ת קבלת עדכונים ופרסומים</label>
+
+                <div class="checkbox-group" style="align-items: flex-start; margin-bottom: 20px;">
+                    <input type="checkbox" id="privacy-agree" name="privacy_agree" required style="width: auto; margin-top: 5px; flex-shrink: 0;">
+                    <label for="privacy-agree" style="font-size: 0.9rem; line-height: 1.4; margin-right: 8px;">
+                        אני מאשר/ת את <a href="/privacy/" target="_blank" style="text-decoration: underline; color: inherit; font-weight: 500;">מדיניות הפרטיות</a>*
+                    </label>
                 </div>
                 
                 <button type="submit" class="submit-btn">שלח</button>
@@ -787,8 +789,8 @@
     </a>
 
     <!-- Scripts -->
-    <script src="js/main.js"></script>
-    
+    <script src="/js/main.js"></script>
+
 
     <script>
 document.addEventListener('DOMContentLoaded', function() {
