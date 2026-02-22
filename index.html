@@ -342,6 +342,115 @@
                 padding: 8px 16px;
             }
         }
+        /* === CLIENTS / LOGO CAROUSEL === */
+        .clients {
+            padding: 20px 5%;
+            /* רקע שקוף כדי לקבל את צבע הרקע של הסקשנים מעל/מתחת */
+            background: transparent;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .clients::before,
+        .clients::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 80px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* * חשוב: החליפי את ההקס קוד #f4f4f4 בצבע הרקע המדויק של הסקשן שלך.
+         * אם לא תעשי זאת, יראו מעבר צבע לא קשור.
+         */
+        .clients::before {
+            right: 0;
+            background: linear-gradient(to left, var(--white), transparent);
+        }
+
+        .clients::after {
+            left: 0;
+            background: linear-gradient(to right, var(--white), transparent);
+        }
+
+        .clients .section-header p {
+            max-width: 700px;
+        }
+
+        .clients-carousel-wrapper {
+            position: relative;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+
+        .clients-track {
+            display: flex;
+            /* הרוחב המקסימלי מונע מהלוגואים להדחס פנימה */
+            width: max-content;
+            animation: clients-scroll 25s linear infinite;
+            will-change: transform;
+        }
+
+        .clients-slide {
+            display: flex;
+            gap: 40px;
+            padding-inline-end: 40px; /* הרווח בין סט 1 לסט 2 */
+        }
+
+        .client-logo {
+            flex: 0 0 auto;
+            width: 180px;
+            height: 200px;
+            border-radius: 12px;
+            background: var(--gray-light, #f9f9f9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            opacity: 0.9;
+            transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(0.2);
+        }
+
+        .client-logo:hover {
+            transform: translateY(-5px);
+            opacity: 1;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* * מאחר והאתר בעברית (RTL), האלמנטים מסודרים מימין לשמאל.
+         * לכן, כדי לגלול שמאלה ולחשוף את מה שמוסתר, האנימציה צריכה לנוע ימינה (ערך חיובי של 50%).
+         * אם הקרוסלה זזה לכיוון ההפוך ממה שרצית, פשוט שחקני את הערך ל: -50%
+         */
+        @keyframes clients-scroll {
+            from { transform: translateX(0); }
+            to   { transform: translateX(25%); }
+        }
+
+        /* Mobile tweak */
+        @media (max-width:768px) {
+            .clients {
+                padding: 60px 5%;
+            }
+            .clients-slide {
+                gap: 20px;
+                padding-inline-end: 20px;
+            }
+            .client-logo {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
     </style>
     <!-- Service Tags -->
     <section class="service-tags">
@@ -670,6 +779,65 @@
             </div>
         </div>
         
+    </section>
+    <!--clinte -->
+    <section class="clients">
+        <div class="section-header">
+            <h2>בין לקוחותינו</h2>
+            <p>במהלך השנים ליווינו עשרות ארגונים, משרדי עורכי דין ולקוחות פרטיים מכל רחבי הארץ, תוך שמירה על דיסקרטיות מלאה.</p>
+        </div>
+
+        <div class="clients-carousel-wrapper">
+            <div class="clients-track">
+                <div class="clients-slide">
+                    <div class="client-logo">
+                        <img src="/images/client1.png" alt="לקוח 1">
+                    </div>
+                    <div class="client-logo">
+                        <img src="/images/client2.png" alt="לקוח 2">
+                    </div>
+                    <div class="client-logo">
+                        <img src="/images/client3.png" alt="לקוח 3">
+                    </div>
+                    <div class="client-logo">
+                        <img src="/images/client4.png" alt="לקוח 4">
+                    </div>
+                    <div class="client-logo">
+                        <img src="/images/client5.png" alt="לקוח 5">
+                    </div>
+                    <div class="client-logo">
+                        <img src="/images/client6.png" alt="לקוח6">
+                    </div>
+                    <div class="client-logo">
+                        <img src="/images/client7.png" alt="לקוח 7">
+                    </div>
+                </div>
+
+                <div class="clients-slide">
+                    <div class="client-logo">
+                        <img src="/images/client1.png" alt="לקוח 1">
+                    </div>
+                    <div class="client-logo">
+                        <img src="/images/client2.png" alt="לקוח 2">
+                    </div>
+                    <div class="client-logo">
+                        <img src="/images/client3.png" alt="לקוח 3">
+                    </div>
+                    <div class="client-logo">
+                        <img src="/images/client4.png" alt="לקוח 4">
+                    </div>
+                    <div class="client-logo">
+                        <img src="/images/client5.png" alt="לקוח 5">
+                    </div>
+                    <div class="client-logo">
+                        <img src="/images/client6.png" alt="לקוח6">
+                    </div>
+                    <div class="client-logo">
+                        <img src="/images/client7.png" alt="לקוח 7">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Form Section -->
